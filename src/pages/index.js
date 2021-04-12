@@ -1,7 +1,8 @@
-import Main from "./main"
+
+import Home from "./home"
 
 export default function Index() {
   return (
-    <Main />
+    <Home />
   )
 }
