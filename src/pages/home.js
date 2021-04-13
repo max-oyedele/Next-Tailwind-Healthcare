@@ -11,7 +11,7 @@ const LogoContainer = () => {
       <div className="absolute w-full justify-center">
         <Header/>
       </div>
-      <div className="absolute top-24 sm:top-40 left-8 sm:left-32">
+      <div className="absolute top-28 sm:top-40 left-6 sm:left-36">
         <span className="text-2xl sm:text-4xl text-white block">Personalized healthcare</span>
         <span className="text-2xl sm:text-4xl text-white block">looks good on you</span>
         <span className="text-xs text-white block mt-5">Safe and effective treatments, in person or online</span>
@@ -99,7 +99,6 @@ const BrandContainer = () => {
 
         <span className="block text-gray-900 text-sm font-bold mt-6">Private and personal</span>
         <span className="text-gray-700 text-sm mt-1">Prevent small issues from turning into bigger ones with a physician who really understands you.</span>
-
       </div>
     </div>
   )
@@ -206,17 +205,14 @@ const IntroContainer = () => {
 
 const MapContainer = () => {
   return (
-    <div className="md:flex my-16 px-6 md:px-24">
-      <div id="map-part-phone" className="md:hidden w-full justify-center">
-        <img src="/home/map.png" width="100%" alt="map" />
-      </div>
-      <div className="w-full md:w-1/2 flex flex-col justify-center my-6 pr-6 md:pr-16">
-        <span className="text-xl text-black font-bold">Complete care, where and when you need it</span>
+    <div className="px-6 md:px-24 grid grid-rows-2 grid-y-4 sm:grid-cols-2 sm:grid-rows-1 sm:gap-x-4 mt-10">
+      <div className="order-2 sm:order-1 flex flex-col justify-center pr-6 md:pr-16">
+        <span className="text-xl text-black font-bold mt-4">Complete care, where and when you need it</span>
         <span className="text-gray-800 mt-6">Receive exceptional care, whether you're at home or on the go. We offer online treatments in 47 states - with virtual access opening soon in Nevada, Minnesota, and Mississippi. Our physical officers are in convenient locations across the US.</span>
         <button className="w-44 h-12 flex justify-center items-center text-white rounded-md my-6 bg-toneblue-dark">Lorem ipsum dolors</button>
       </div>
-      <div id="map-part-pc-tablet" className="hidden md:flex w-full md:w-1/2 md:justify-end">
-        <img src="/home/map.png" alt="map" />
+      <div className="order-1 sm:order-2 sm:mt-6">
+        <img src="/home/map.png" width="100%" alt="map" />
       </div>
     </div>
   )

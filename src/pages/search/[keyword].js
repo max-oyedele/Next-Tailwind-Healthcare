@@ -1,20 +1,10 @@
+import {useRouter} from "next/router"
 import { BiSlider } from "react-icons/bi";
 
 import Header from "components/Header"
 import Footer from "components/Footer"
 import Paginate from "components/Paginate"
-
-const BreadCrumb = () => {
-  return (
-    <div className="mt-16 xs:mt-6 px-6 md:px-36 flex">
-      <span className="text-sm text-gray-800">Home</span>
-      <span className="text-sm text-gray-800 mx-2">/</span>
-      <span className="text-sm text-gray-800">Results</span>
-      <span className="text-sm text-gray-800 mx-2">/</span>
-      <span className="text-sm text-gray-800">beauty</span>
-    </div>
-  )
-}
+import BreadCrumb from "components/BreadCrumb"
 
 const WordContainer = () => {
   return (
@@ -141,10 +131,13 @@ const BodyContainer = () => {
 }
 
 const Search = () => {
+  const router = useRouter()
+  const {keyword} = router.query
+
   return (
     <div>
-      <Header theme='dark' />
-      <BreadCrumb />
+      <Header theme="dark" />
+      <BreadCrumb data={['Search', keyword]}/>
       <WordContainer />
       <BodyContainer />
       <Paginate />
