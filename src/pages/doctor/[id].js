@@ -67,7 +67,7 @@ const ImgContainer = () => {
           </div>
           <div id="rectangle" className="w-full sm:w-full lg:w-1/4 bg-gray-100 flex flex-col justify-center items-center rounded-md mt-4 lg:mt-0 p-6">
             <span className="text-sm text-gray-900">Talk to one of our care managers to help you get started.</span>
-            <button className="w-44 h-10 flex justify-center items-center text-gray-800 rounded-md mt-6 bg-toneyellow">Schedule Your Free Call</button>
+            <button className="w-48 h-10 flex justify-center items-center text-gray-800 rounded-md mt-6 bg-toneyellow-light hover:bg-toneyellow-dark">Schedule Your Free Call</button>
           </div>
         </div>
       </div>
@@ -91,7 +91,7 @@ const TabContainer = (props) => {
           ))
         }
       </div>
-      <div className="sm:hidden p-4">
+      <div className="sm:hidden p-6">
         <SelectBox options={props.tabs} selectedOption={props.selectedTab} setSelectedOption={props.setSelectedTab} backColor='transparent' />
       </div>
     </div>
@@ -129,7 +129,7 @@ const Doctor = () => {
   return (
     <div>
       <Header theme="dark" />
-      <BreadCrumb data={['Doctor', id, selectedTab.value]} />
+      <BreadCrumb data={['Doctor', id, selectedTab.label]} />
       <ImgContainer />
       <TabContainer tabs={tabs} selectedTab={selectedTab} setSelectedTab={setSelectedTab} />
       <selectedTab.component />

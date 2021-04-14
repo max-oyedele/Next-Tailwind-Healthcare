@@ -8,7 +8,10 @@ module.exports = {
           light: '#4b8aa3',
           dark: '#264653'
         },
-        toneyellow: '#f2cc8f'
+        toneyellow: {
+          light: '#f2cc8f',
+          dark: '#e4c771'
+        }
       }
     },
     screens: {

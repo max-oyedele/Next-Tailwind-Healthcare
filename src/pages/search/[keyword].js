@@ -104,7 +104,7 @@ const BodyContainer = () => {
               <div key={index}>
                 <div className="flex items-center">
                   <input id={`${tag.name}`} type="checkbox" className="cursor-pointer" />
-                  <label htmlFor="articles" className="text-xs cursor-pointer ml-1">{tag.name} ({tag.count})</label>
+                  <label htmlFor={`${tag.name}`} className="text-xs text-gray-900 cursor-pointer ml-1">{tag.name} ({tag.count})</label>
                 </div>
                 <hr className="border-gray-300 my-4" />
               </div>

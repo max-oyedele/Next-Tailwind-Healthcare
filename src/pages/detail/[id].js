@@ -43,9 +43,9 @@ const DetailContainer = (props) => {
           <span className="text-sm text-gray-900 ml-2">FDA approved to treat HSDD</span>
         </div>
         <Link href="/procedure/abcd">
-          <a><span className="w-full h-10 flex justify-center items-center text-white rounded-md bg-toneblue-dark mt-6">Start Online Visit</span></a>
+          <a><span className="w-full h-10 flex justify-center items-center text-white rounded-md bg-toneblue-dark hover:bg-toneblue-light mt-6">Start Online Visit</span></a>
         </Link>
-        <button className="w-full h-10 flex justify-center items-center text-gray-900 rounded-md bg-gray-200 mt-6">Doctor prescribed | Cancel anytime</button>
+        <button className="w-full h-10 flex justify-center items-center text-gray-900 rounded-md bg-gray-200 hover:bg-gray-300 mt-6">Doctor prescribed | Cancel anytime</button>
         <div className="flex justify-center mt-6">
           <span className="block w-11/12 text-xs text-center text-gray-800">*Prescription products require an online medical visit to determine if medication is right for you. You will only be billed if approved.</span>
         </div>
@@ -237,7 +237,7 @@ const PlanOptionLayer = (props) => {
               <span className="text-sm text-gray-700 mt-4">Automatic Recurring Delivery. Cancel Anytime</span>
             </div>
             <div className="flex justify-center mt-10">
-              <button className="w-44 h-12 flex justify-center items-center text-white rounded-md bg-toneblue-dark">Got it</button>
+              <button className="w-44 h-12 flex justify-center items-center text-white rounded-md bg-toneblue-dark hover:bg-toneblue-light">Got it</button>
             </div>
           </div>
         </div>

@@ -148,7 +148,7 @@ const ProductContainer = () => {
               ))
             }
           </div>
-          <button className={`w-full h-12 flex justify-center items-center ${selectedOffice ? 'text-white' : 'text-gray-400'} rounded-md ${selectedOffice ? 'bg-toneblue-dark' : 'bg-gray-100'} mt-6`}>Add to Cart</button>
+          <button className={`w-full h-12 flex justify-center items-center ${selectedOffice ? 'text-white' : 'text-gray-400'} rounded-md ${selectedOffice ? 'bg-toneblue-dark hover:bg-toneblue-light' : 'bg-gray-100'} mt-6`}>Add to Cart</button>
         </div>
       </div>
     </div>
@@ -348,7 +348,7 @@ const MapContainer = () => {
       <div className="order-2 sm:order-1 flex flex-col justify-center pr-6 md:pr-16">
         <span className="text-xl text-black font-bold mt-4">Complete care, where and when you need it</span>
         <span className="text-gray-800 mt-6">Receive exceptional care, whether you're at home or on the go. We offer online treatments in 47 states - with virtual access opening soon in Nevada, Minnesota, and Mississippi. Our physical officers are in convenient locations across the US.</span>
-        <button className="w-44 h-12 flex justify-center items-center text-white rounded-md my-6 bg-toneblue-dark">Lorem ipsum dolors</button>
+        <button className="w-44 h-12 flex justify-center items-center text-white rounded-md my-6 bg-toneblue-dark hover:bg-toneblue-light">Lorem ipsum dolors</button>
       </div>
       <div className="order-1 sm:order-2 mt-6">
         <img src="/home/map.png" width="100%" alt="map" />

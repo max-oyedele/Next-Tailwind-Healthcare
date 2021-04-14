@@ -1,4 +1,5 @@
-import { BiSlider } from "react-icons/bi";
+import React from "react"
+import { BiSlider, BiX } from "react-icons/bi"
 import Paginate from "components/Paginate"
 
 const ThumbContainer = () => {
@@ -48,7 +49,7 @@ const ThumbContainer = () => {
   )
 }
 
-const BodyContainer = () => {
+const BodyContainer = (props) => {
   const tags = [
     {
       name: 'All Gender',
@@ -148,7 +149,7 @@ const BodyContainer = () => {
       <div className="w-full md:w-1/4 md:pr-6">
         <div className="flex justify-between items-center mb-4">
           <span className="text-sm font-bold">{data.length} Results</span>
-          <button className="sm:hidden w-24 h-8 flex justify-center items-center text-sm text-gray-800 border border-gray-800 rounded-md ">FILTER<BiSlider className="ml-3" /></button>
+          <button onClick={() => props.setFilterLayer(true)} className="sm:hidden w-24 h-8 flex justify-center items-center text-sm text-gray-800 border border-gray-800 rounded-md">FILTER<BiSlider className="ml-3" /></button>
         </div>
         <hr className="hidden sm:block border-gray-300 my-4" />
         <div id="results-part" className="hidden sm:grid sm:grid-cols-2 sm:grid-rows-3 sm:gap-x-24 md:block">
@@ -157,7 +158,7 @@ const BodyContainer = () => {
               <div key={index}>
                 <div className="flex items-center">
                   {/* <input id={`${tag.name}`} type="checkbox" className="cursor-pointer" /> */}
-                  <label htmlFor="articles" className="text-xs cursor-pointer ml-1">{tag.name} ({tag.count})</label>
+                  <label htmlFor="articles" className="text-xs text-gray-900 cursor-pointer ml-1">{tag.name} ({tag.count})</label>
                 </div>
                 <hr className="border-gray-300 my-4" />
               </div>
@@ -178,17 +179,88 @@ const BodyContainer = () => {
             </div>
           ))
         }
-      </div>      
+      </div>
     </div>
   )
 }
 
+const FilterLayer = (props) => {
+  const data = [
+    {
+      type: 'only',
+      title: 'Prescription Treatment Only',
+      price: '160',
+      desc: 'Option to add an at-home hormone test for an additional, one-time cost of $20.'
+    },
+    {
+      type: 'plus',
+      title: 'Prescription Treatment + Doctor Consults + Hormone Test',
+      price: '229',
+      desc: 'Includes an at-home hormone lab test and a monthly visit with your specialist physician.'
+    },
+  ]
+
+  return (
+    <div className="fixed inset-0">
+      <div id="full-overlay" className="bg-gray-100 w-full h-full opacity-60"></div>
+      <div id="right-sidebar" className="absolute inset-0 flex justify-end">
+        <div className="bg-gray-200 w-full">
+          <div id="header" className="flex justify-between items-center bg-gray-300 h-20 p-10">
+            <div className="flex items-center">
+              <BiSlider />
+              <span className="text-md text-gray-900 font-bold uppercase ml-1">FILTER BY</span>
+            </div>
+            <BiX className="text-2xl cursor-pointer" onClick={() => props.setFilterLayer(false)} />
+          </div>
+          <div id="body" className="flex flex-col m-10">
+            <span className="text-xl text-gray-900 font-bold">Gender</span>
+            <div className="grid grid-cols-2 gap-x-4 mt-4">
+              <div className="flex items-center">
+                <input id="women" type="checkbox" className="cursor-pointer" />
+                <label htmlFor="women" className="text-md text-gray-900 cursor-pointer ml-1">Women</label>
+              </div>
+              <div className="flex items-center">
+                <input id="men" type="checkbox" className="cursor-pointer" />
+                <label htmlFor="men" className="text-md text-gray-900 cursor-pointer ml-1">Men</label>
+              </div>
+            </div>
+            <hr className="border-gray-300 my-6" />
+            <span className="text-xl text-gray-900 font-bold">Health Needs</span>
+            {
+              [1, 2, 3, 4].map((_, index) => (
+                <div key={index} className="flex items-center mt-4">
+                  <input id={`lorem_${_}`} type="checkbox" className="cursor-pointer" />
+                  <label htmlFor={`lorem_${_}`} className="text-md text-gray-900 cursor-pointer ml-1">Lorem ipsum</label>
+                </div>
+              ))
+            }
+          </div>
+          <div id="footer" className="absolute w-full bottom-0">
+            <button onClick={() => props.applyFilter()} className="w-full h-12 flex justify-center items-center bg-toneblue-dark hover:bg-toneblue-light text-sm text-white">Apply</button>
+          </div>
+        </div>
+      </div>
+    </div >
+  )
+}
+
+
 const Services = () => {
+  const [filterLayer, setFilterLayer] = React.useState(false)
+  const applyFilter = () => {
+    //to do
+    setFilterLayer(false)
+  }
+
   return (
     <div>
       <ThumbContainer />
-      <BodyContainer />
+      <BodyContainer setFilterLayer={setFilterLayer} />
       <Paginate />
+      {
+        filterLayer &&
+        <FilterLayer setFilterLayer={setFilterLayer} applyFilter={applyFilter} />
+      }
     </div>
   )
 }

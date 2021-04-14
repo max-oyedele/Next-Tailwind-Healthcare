@@ -12,7 +12,7 @@ export default function Header(props) {
         </div>
         <div id="sm-input" className="invisible xs:visible w-full sm:w-2/4 h-9 bg-gray-100 flex justify-center items-center rounded-md mx-2">
           <BiSearchAlt2 className="text-gray-600 w-5 h-5" />
-          <input className="w-3/4 mx-2 text-xs bg-transparent" placeholder="Search for solutions to your health concerns" />
+          <input className="w-3/4 h-full mx-2 text-sm bg-transparent" placeholder="Search for solutions to your health concerns" />
         </div>
         <div className={`flex flex-col items-end ${theme === 'dark' ? 'text-gray-700' : 'text-white'}`}>
           <span className="text-sm sm:text-lg block leading-5">Because</span>
