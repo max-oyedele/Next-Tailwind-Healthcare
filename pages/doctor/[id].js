@@ -67,7 +67,7 @@ const ImgContainer = () => {
           </div>
           <div id="rectangle" className="w-full sm:w-full lg:w-1/4 bg-gray-100 flex flex-col justify-center items-center rounded-md mt-4 lg:mt-0 p-6">
             <span className="text-sm text-gray-900">Talk to one of our care managers to help you get started.</span>
-            <button className="w-48 h-10 flex justify-center items-center text-gray-800 rounded-md mt-6 bg-toneyellow-light hover:bg-toneyellow-dark">Schedule Your Free Call</button>
+            <button className="btn btn-secondary w-48 h-10 mt-6">Schedule Your Free Call</button>
           </div>
         </div>
       </div>
@@ -82,7 +82,7 @@ const TabContainer = (props) => {
         {
           props.tabs.map((tab, index) => (
             <div key={index} className="relative flex flex-col items-center cursor-pointer mx-4" onClick={() => props.setSelectedTab(tab)}>
-              <span className={`text-sm text-center ${tab.value === props.selectedTab.value ? 'text-toneblue-dark font-bold' : 'text-gray-700'}`}>{tab.label}</span>
+              <span className={`text-sm text-center ${tab.value === props.selectedTab.value ? 'text-primary-100 font-bold' : 'text-gray-700'}`}>{tab.label}</span>
               {
                 tab.value === props.selectedTab.value &&
                 <BsCircleFill className="absolute -bottom-3 w-1 text-bluetone-dark" />

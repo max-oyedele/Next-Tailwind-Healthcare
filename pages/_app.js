@@ -1,5 +1,6 @@
 import '../styles/globals.css'
 import '../styles/paginate.css'
+import '../styles/button.css'
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />

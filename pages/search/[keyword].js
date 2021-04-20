@@ -95,7 +95,7 @@ const BodyContainer = () => {
       <div className="w-full md:w-1/4 md:pr-6">
         <div className="flex justify-between items-center mb-4">
           <span className="text-sm font-bold">6 Results</span>
-          <button className="sm:hidden w-24 h-8 flex justify-center items-center text-sm text-gray-800 border border-gray-800 rounded-md ">FILTER<BiSlider className="ml-3" /></button>
+          <button className="btn sm:hidden w-24 h-8 text-sm text-gray-800 border border-gray-800">FILTER<BiSlider className="ml-3" /></button>
         </div>
         <hr className="hidden sm:block border-gray-300 my-4" />
         <div id="results-part" className="hidden sm:grid sm:grid-cols-2 sm:grid-rows-3 sm:gap-x-24 md:block">

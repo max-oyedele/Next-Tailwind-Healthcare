@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import Link from "next/link"
-import {useRouter} from "next/router"
+import { useRouter } from "next/router"
 import { BsCircleFill } from "react-icons/bs";
 import { FiChevronDown } from "react-icons/fi";
 import { BiX } from "react-icons/bi";
@@ -24,7 +24,7 @@ const DetailContainer = (props) => {
         </div>
         <span className="text-md text-gray-900 font-bold mt-6">Starting at $160 / month</span>
         <span className="text-sm text-gray-700 mt-2">(plan selected during checkout)</span>
-        <span className="text-md text-toneblue-light cursor-pointer mt-4" onClick={() => props.setPlanLayer(true)}>See plan options {'>'}</span>
+        <span className="text-md text-primary-70 cursor-pointer mt-4" onClick={() => props.setPlanLayer(true)}>See plan options {'>'}</span>
         <span className="text-sm text-gray-900 mt-6">Enhanced with the powerful peptide,  Bremelanotide, Awaken Nasal Spray is a natural boost for your lagging sex drive. In minutes, you'll be better aroused and ready for everything that comes next.</span>
         <div className="flex items-center mt-6">
           <BsCircleFill className="w-2 text-gray-900" />
@@ -42,10 +42,8 @@ const DetailContainer = (props) => {
           <BsCircleFill className="w-2 text-gray-900" />
           <span className="text-sm text-gray-900 ml-2">FDA approved to treat HSDD</span>
         </div>
-        <Link href="/procedure/abcd">
-          <a><span className="w-full h-10 flex justify-center items-center text-white rounded-md bg-toneblue-dark hover:bg-toneblue-light mt-6">Start Online Visit</span></a>
-        </Link>
-        <button className="w-full h-10 flex justify-center items-center text-gray-900 rounded-md bg-gray-200 hover:bg-gray-300 mt-6">Doctor prescribed | Cancel anytime</button>
+        <button className="btn btn-primary w-full h-10 mt-6">Start Online Visit</button>
+        <button disabled className="btn btn-primary w-full h-10 mt-6">Doctor prescribed | Cancel anytime</button>
         <div className="flex justify-center mt-6">
           <span className="block w-11/12 text-xs text-center text-gray-800">*Prescription products require an online medical visit to determine if medication is right for you. You will only be billed if approved.</span>
         </div>
@@ -58,7 +56,7 @@ const DetailContainer = (props) => {
         <span className="text-md text-gray-900 font-bold mt-6">Active ingredients</span>
         <span className="text-sm text-gray-800 mt-4">Bremelanotide(PT-141)/2 ml</span>
         <span className="text-sm text-gray-800 mt-2">A self-administered peptide, one injection of Bremelanotide improves sexual arousal for up to 18 hour.</span>
-        <span className="text-md text-toneblue-light cursor-pointer mt-4">Important safety information {'>'}</span>
+        <span className="text-md text-primary-70 cursor-pointer mt-4">Important safety information {'>'}</span>
       </div>
     </div>
   )
@@ -70,7 +68,7 @@ const TextContainer = () => {
       <span className="block w-11/12 sm:1/2 text-3xl text-center text-gray-900 font-bold mt-10">Find balance with at-home lab testing</span>
       <span className="block w-11/12 sm:w-1/2 text-md text-center text-gray-800 mt-6">Hormones play a role in your overall health, and only blood work reveals the full picture. Choose a plan with an advanced, hormone test to ensure your doses are just what your body needs. Review results with your specialist and get a personalized plan. Because there's no one-size-fits-all in health.</span>
       <span className="block w-11/12 sm:w-1/2 text-md text-center text-gray-800 mt-4">* At-home lab test ships with order to your door</span>
-      <span className="text-md text-toneblue-light cursor-pointer my-6">See plan options {'>'}</span>
+      <span className="text-md text-primary-70 cursor-pointer my-6">See plan options {'>'}</span>
     </div>
   )
 }
@@ -104,7 +102,7 @@ const QuestionContainer = () => {
       <div className="sm:w-1/3 mt-4">
         <span className="block w-1/2 text-2xl text-gray-900 font-bold">Frequently asked questions</span>
         <span className="block text-md text-gray-800 mt-6">More questions?</span>
-        <span className="text-md text-toneblue-light cursor-pointer">Visit our help center {'>'}</span>
+        <span className="text-md text-primary-70 cursor-pointer">Visit our help center {'>'}</span>
       </div>
       <div className="sm:w-2/3 mt-4">
         {
@@ -237,7 +235,7 @@ const PlanOptionLayer = (props) => {
               <span className="text-sm text-gray-700 mt-4">Automatic Recurring Delivery. Cancel Anytime</span>
             </div>
             <div className="flex justify-center mt-10">
-              <button className="w-44 h-12 flex justify-center items-center text-white rounded-md bg-toneblue-dark hover:bg-toneblue-light">Got it</button>
+              <button className="btn btn-primary w-44 h-12">Got it</button>
             </div>
           </div>
         </div>
@@ -248,13 +246,13 @@ const PlanOptionLayer = (props) => {
 
 const Detail = () => {
   const router = useRouter()
-  const {id} = router.query
+  const { id } = router.query
   const [planLayer, setPlanLayer] = useState(false)
 
   return (
     <div>
       <Header theme="dark" />
-      <BreadCrumb data={['Detail', id]}/>
+      <BreadCrumb data={['Detail', id]} />
       <DetailContainer setPlanLayer={setPlanLayer} />
       <TextContainer />
       <QuestionContainer />

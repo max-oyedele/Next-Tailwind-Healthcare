@@ -140,7 +140,7 @@ const ProductContainer = () => {
             }
             {
               selectedOffice?.packages?.map((item, index) => (
-                <div key={index} className="flex flex-col border border-toneblue-light rounded-md overflow-hidden p-2">
+                <div key={index} className="flex flex-col border border-primary-70 rounded-md overflow-hidden p-2">
                   <span className="text-sm text-gray-800 font-bold">{item.appointment}</span>
                   <span className="text-sm text-gray-800 mt-4">{getFormatNumber(item.price)}</span>
                   <span className="text-sm text-gray-800 mt-4">{item.time} minutes</span>
@@ -148,7 +148,7 @@ const ProductContainer = () => {
               ))
             }
           </div>
-          <button className={`w-full h-12 flex justify-center items-center ${selectedOffice ? 'text-white' : 'text-gray-400'} rounded-md ${selectedOffice ? 'bg-toneblue-dark hover:bg-toneblue-light' : 'bg-gray-100'} mt-6`}>Add to Cart</button>
+          <button disabled={!selectedOffice} className="btn btn-primary w-full h-12 mt-6">Add to Cart</button>
         </div>
       </div>
     </div>
@@ -256,7 +256,7 @@ const QuestionContainer = () => {
       <div className="sm:w-1/3 mt-4">
         <span className="block w-1/2 text-2xl text-gray-900 font-bold">Frequently asked questions</span>
         <span className="block text-md text-gray-800 mt-6">More questions?</span>
-        <span className="text-md text-toneblue-light cursor-pointer">Visit our help center {'>'}</span>
+        <span className="text-md text-primary-70 cursor-pointer">Visit our help center {'>'}</span>
       </div>
       <div className="sm:w-2/3 mt-4">
         {
@@ -348,7 +348,7 @@ const MapContainer = () => {
       <div className="order-2 sm:order-1 flex flex-col justify-center pr-6 md:pr-16">
         <span className="text-xl text-black font-bold mt-4">Complete care, where and when you need it</span>
         <span className="text-gray-800 mt-6">Receive exceptional care, whether you're at home or on the go. We offer online treatments in 47 states - with virtual access opening soon in Nevada, Minnesota, and Mississippi. Our physical officers are in convenient locations across the US.</span>
-        <button className="w-44 h-12 flex justify-center items-center text-white rounded-md my-6 bg-toneblue-dark hover:bg-toneblue-light">Lorem ipsum dolors</button>
+        <button className="btn btn-primary w-44 h-12 my-6">Lorem ipsum dolors</button>
       </div>
       <div className="order-1 sm:order-2 mt-6">
         <img src="/home/map.png" width="100%" alt="map" />

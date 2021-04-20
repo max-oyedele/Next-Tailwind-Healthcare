@@ -149,7 +149,7 @@ const BodyContainer = (props) => {
       <div className="w-full md:w-1/4 md:pr-6">
         <div className="flex justify-between items-center mb-4">
           <span className="text-sm font-bold">{data.length} Results</span>
-          <button onClick={() => props.setFilterLayer(true)} className="sm:hidden w-24 h-8 flex justify-center items-center text-sm text-gray-800 border border-gray-800 rounded-md">FILTER<BiSlider className="ml-3" /></button>
+          <button onClick={() => props.setFilterLayer(true)} className="btn sm:hidden w-24 h-8 text-sm text-gray-800 border border-gray-800 rounded-md">FILTER<BiSlider className="ml-3" /></button>
         </div>
         <hr className="hidden sm:block border-gray-300 my-4" />
         <div id="results-part" className="hidden sm:grid sm:grid-cols-2 sm:grid-rows-3 sm:gap-x-24 md:block">
@@ -236,7 +236,7 @@ const FilterLayer = (props) => {
             }
           </div>
           <div id="footer" className="absolute w-full bottom-0">
-            <button onClick={() => props.applyFilter()} className="w-full h-12 flex justify-center items-center bg-toneblue-dark hover:bg-toneblue-light text-sm text-white">Apply</button>
+            <button onClick={() => props.applyFilter()} className="btn w-full h-12 bg-primary-100 hover:bg-primary-70 text-sm text-white">Apply</button>
           </div>
         </div>
       </div>

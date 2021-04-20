@@ -3,11 +3,11 @@ import { FiInstagram, FiFacebook, FiTwitter } from "react-icons/fi";
 
 export default function Footer() {
   return (
-    <div className="bg-toneblue-dark px-6 py-10 md:px-40">
+    <div className="bg-primary-100 px-6 py-10 md:px-40">
       <div className="flex flex-col items-center">
         <span className="text-3xl text-white font-bold">BECAUSE YOU MATTER</span>
         <span className="text-sm text-white mt-4">Begin your journey toward whole health today</span>
-        <button className="w-44 h-10 flex justify-center items-center text-gray-900 rounded-md bg-toneyellow-light hover:bg-toneyellow-dark mt-6">Schedule Your Free Call</button>
+        <button className="btn btn-secondary w-44 h-10 mt-6">Schedule Your Free Call</button>
       </div>
       <div className="sm:flex">
         <div className="w-full sm:w-1/2 flex flex-col mt-16">
@@ -21,7 +21,7 @@ export default function Footer() {
           <span className="text-xs text-gray-300 mt-4">Sign up for your personalized monthly newsletter.</span>
           <div id="email-container" className="w-full sm:w-3/4 h-12 flex border border-white rounded-md mt-4 p-1">
             <input placeholder="Email address" className="w-3/4 pl-2 text-white bg-transparent" />
-            <button className="w-1/4 flex justify-center items-center text-sm text-gray-900 rounded-md bg-white hover:bg-gray-300">Register</button>
+            <button className="btn btn-tertiary w-1/4 text-sm">Register</button>
           </div>
           <span className="block w-full sm:w-3/4 text-xs text-gray-300 mt-4">By subscribing to our newsletter, you are agreeing to our Data Protection Statement</span>
         </div>

@@ -101,7 +101,7 @@ const CForm = () => {
         <input id='subscribe' type="checkbox" className="cursor-pointer" />
         <label htmlFor="subscribe" className="text-sm text-gray-900 cursor-pointer ml-1">Subscribe to the Because Health Newsletter</label>
       </div>
-      <button className="w-44 h-10 flex justify-center items-center text-white rounded-md my-6 bg-toneblue-dark hover:bg-toneblue-light">Send Contact Request</button>
+      <button className="btn btn-primary w-44 h-10 my-6">Send Contact Request</button>
       <span className="text-xs text-gray-700">By entering my data and pressing the button "Send contact request" I agree to my e-mail address and my name being used to answer my contact request.</span>
     </div>
   )

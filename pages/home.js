@@ -73,7 +73,7 @@ const TitleContainer = () => {
       <span className="bock w-10/12 sm:w-6/12 md:w-4/12 text-center text-black text-2xl font-bold">Your goals are as unique as you are</span>
       <span className="block w-10/12 sm:w-9/12 md:w-6/12 text-center text-gray-700 text-sm mt-5">Because Health helps you optimize your body and mind using proven, physician-designed treatments to deliver ultra-personalized results.</span>
       <span className="block w-10/12 sm:w-10/12 md:w-8/12 text-center text-black text-4xl font-bold mt-8">Specialist care at your fingertips</span>
-      <span className="block w-10/12 sm:w-10/12 md:w-8/12 text-center text-4xl font-bold mt-6 text-toneblue-light">Rx Online</span>
+      <span className="block w-10/12 sm:w-10/12 md:w-8/12 text-center text-4xl font-bold mt-6 text-primary-70">Rx Online</span>
     </div>
   )
 }
@@ -110,8 +110,8 @@ const SlideContainer = () => {
       <div id="txt-part" className="relative w-full md:w-2/5 px-4 md:px-24 py-10">
         <span className="text-black text-xl font-bold">Jennier W.</span>
         <div id="left-right-icon" className="hidden sm:flex absolute top-10 right-1 sm:right-4 md:right-10">
-          <BiChevronLeftCircle className="text-3xl mx-1 text-toneblue-light" />
-          <BiChevronRightCircle className="text-3xl mx-1 text-toneblue-light" />
+          <BiChevronLeftCircle className="text-3xl mx-1 text-primary-70" />
+          <BiChevronRightCircle className="text-3xl mx-1 text-primary-70" />
         </div>
         <div id="img-part-mobile" className="md:hidden w-full py-10 flex space-x-10 overflow-hidden">
           <img src="/home/jennifer.png" alt="jennifer" />
@@ -183,7 +183,7 @@ const IntroContainer = () => {
             </div>
           </div>
 
-          <button className="w-44 h-12 flex justify-center items-center text-white rounded-md my-6 bg-toneblue-dark hover:bg-toneblue-light">Lorem ipsum dolors</button>
+          <button className="btn btn-primary w-44 h-12 my-6">Lorem ipsum dolors</button>
         </div>
       </div>
       <div id="brand-part-pc-tablet" className="hidden sm:flex px-6 md:px-24 my-16">
@@ -209,7 +209,7 @@ const MapContainer = () => {
       <div className="order-2 sm:order-1 flex flex-col justify-center pr-6 md:pr-16">
         <span className="text-xl text-black font-bold mt-4">Complete care, where and when you need it</span>
         <span className="text-gray-800 mt-6">Receive exceptional care, whether you're at home or on the go. We offer online treatments in 47 states - with virtual access opening soon in Nevada, Minnesota, and Mississippi. Our physical officers are in convenient locations across the US.</span>
-        <button className="w-44 h-12 flex justify-center items-center text-white rounded-md my-6 bg-toneblue-dark hover:bg-toneblue-light">Lorem ipsum dolors</button>
+        <button className="btn btn-primary w-44 h-12 my-6">Lorem ipsum dolors</button>
       </div>
       <div className="order-1 sm:order-2 sm:mt-6">
         <img src="/home/map.png" width="100%" alt="map" />
@@ -254,23 +254,23 @@ const StatContainer = () => {
       <span className="block w-11/12 sm:w-1/2 text-sm text-center text-gray-800 mt-6">Unlike conventional primary care or typical telemedicine, our physicians use integrative medicine to treat chronic conditions. Treatments may include medications, creams, injections, nutritional modifications, and various specialist procedures. See for yourself how our approach can transform your health.</span>
       <div className="px-6 md:px-24 sm:flex sm:space-x-10">
         <div className="bg-gray-100 flex flex-col mt-10 p-6">
-          <span className="text-3xl text-toneblue-light">74%<IoIosArrowRoundUp className="inline text-toneblue-light" /></span>
+          <span className="text-3xl text-primary-70">74%<IoIosArrowRoundUp className="inline text-primary-70" /></span>
           <span className="text-sm text-black mt-2">Vitamin D</span>
           <span className="text-sm text-gray-800 mt-4">From a baseline average of 40 ng/mL, our patients generally experience a 69-74% increase to their vitamin D levels in 6 months (optimum vitamin D levels range from 50-80ng/mL).</span>
         </div>
         <div className="bg-gray-100 flex flex-col mt-10 p-6">
-          <span className="text-3xl text-toneblue-light">23%<IoIosArrowRoundDown className="inline text-toneblue-light" /></span>
+          <span className="text-3xl text-primary-70">23%<IoIosArrowRoundDown className="inline text-primary-70" /></span>
           <span className="text-sm text-black mt-2">Fasting Insulin</span>
           <span className="text-sm text-gray-800 mt-4">From a baseline average of 40 ng/mL, our patients generally experience a 69-74% increase to their vitamin D levels in 6 months (optimum vitamin D levels range from 50-80ng/mL).</span>
         </div>
         <div className="bg-gray-100 flex flex-col mt-10 p-6">
-          <span className="text-3xl text-toneblue-light">12%<IoIosArrowRoundDown className="inline text-toneblue-light" /></span>
+          <span className="text-3xl text-primary-70">12%<IoIosArrowRoundDown className="inline text-primary-70" /></span>
           <span className="text-sm text-black mt-2">HbA1c</span>
           <span className="text-sm text-gray-800 mt-4">From a baseline average of 40 ng/mL, our patients generally experience a 69-74% increase to their vitamin D levels in 6 months (optimum vitamin D levels range from 50-80ng/mL).</span>
         </div>
       </div>
       <div className="flex justify-center mt-10">
-        <button className="w-48 h-12 flex justify-center items-center text-white rounded-md bg-toneblue-dark hover:bg-toneblue-light">Schedule Your Free Call</button>
+        <button className="btn btn-primary w-48 h-12">Schedule Your Free Call</button>
       </div>
     </div>
   )
