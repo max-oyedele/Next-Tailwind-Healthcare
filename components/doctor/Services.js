@@ -33,12 +33,9 @@ const ThumbContainer = () => {
         <div className="w-full grid grid-cols-5 gap-x-4">
           {
             data.map((item, index) => (
-              <div className="relative h-12 rounded-md">
+              <div className="relative h-12 rounded-md cursor-pointer">
                 <img src={item.img} className="absolute inset-0" className="object-cover w-full h-full rounded-md" alt={item.name} />
-                <div className="absolute inset-0 bg-gray-400 opacity-80 rounded-md"></div>
-                <div className="absolute inset-0 flex justify-center items-center rounded-md">
-                  <span className="text-sm text-white">{item.name}</span>
-                </div>
+                <button className="btn btn-product absolute inset-0 w-full h-full">{item.name}</button>
               </div>
             ))
           }

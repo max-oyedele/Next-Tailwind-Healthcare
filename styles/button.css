@@ -1,7 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @layer base {
   .btn {
     @apply flex justify-center items-center rounded-md
@@ -65,5 +61,41 @@
 
   .btn-tertiary:disabled {
     @apply bg-transparent text-grayscale-white text-opacity-40 border-2 border-grayscale-white border-opacity-40 cursor-not-allowed
+  }
+
+  .btn-product {
+    @apply bg-grayscale-80 bg-opacity-75 text-grayscale-white
+  }
+
+  .btn-product:hover {
+    @apply bg-category-skincare bg-opacity-25
+  }
+
+  .btn-product:active {
+    @apply bg-grayscale-80 bg-opacity-80
+  }
+
+  .btn-product:focus {
+    @apply bg-grayscale-40 bg-opacity-40 border-2 border-grayscale-40 outline-none
+  }
+
+  .btn-product:disabled {
+    @apply bg-grayscale-60 bg-opacity-80 text-grayscale-60 cursor-not-allowed
+  }
+
+  .link {
+    @apply text-primary-60 w-max
+  }
+
+  .link:hover, .link:focus {
+    @apply underline
+  }
+
+  .link:active {
+    @apply text-primary-80
+  }
+
+  .link:disabled {
+    @apply text-grayscale-60 cursor-not-allowed
   }
 }

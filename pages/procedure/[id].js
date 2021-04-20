@@ -256,7 +256,7 @@ const QuestionContainer = () => {
       <div className="sm:w-1/3 mt-4">
         <span className="block w-1/2 text-2xl text-gray-900 font-bold">Frequently asked questions</span>
         <span className="block text-md text-gray-800 mt-6">More questions?</span>
-        <span className="text-md text-primary-70 cursor-pointer">Visit our help center {'>'}</span>
+        <button className="link text-md">Visit our help center {'>'}</button>
       </div>
       <div className="sm:w-2/3 mt-4">
         {
