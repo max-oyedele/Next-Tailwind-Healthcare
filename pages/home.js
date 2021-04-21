@@ -183,7 +183,7 @@ const IntroContainer = () => {
             </div>
           </div>
 
-          <button className="btn btn-primary w-44 h-12 my-6">Lorem ipsum dolors</button>
+          <button className="btn btn-primary w-48 h-12 my-6">Lorem ipsum dolors</button>
         </div>
       </div>
       <div id="brand-part-pc-tablet" className="hidden sm:flex px-6 md:px-24 my-16">
@@ -209,7 +209,7 @@ const MapContainer = () => {
       <div className="order-2 sm:order-1 flex flex-col justify-center pr-6 md:pr-16">
         <span className="text-xl text-black font-bold mt-4">Complete care, where and when you need it</span>
         <span className="text-gray-800 mt-6">Receive exceptional care, whether you're at home or on the go. We offer online treatments in 47 states - with virtual access opening soon in Nevada, Minnesota, and Mississippi. Our physical officers are in convenient locations across the US.</span>
-        <button className="btn btn-primary w-44 h-12 my-6">Lorem ipsum dolors</button>
+        <button className="btn btn-primary w-48 h-12 my-6">Lorem ipsum dolors</button>
       </div>
       <div className="order-1 sm:order-2 sm:mt-6">
         <img src="/home/map.png" width="100%" alt="map" />
@@ -270,7 +270,7 @@ const StatContainer = () => {
         </div>
       </div>
       <div className="flex justify-center mt-10">
-        <button className="btn btn-primary w-48 h-12">Schedule Your Free Call</button>
+        <button className="btn btn-primary h-12">Schedule Your Free Call</button>
       </div>
     </div>
   )

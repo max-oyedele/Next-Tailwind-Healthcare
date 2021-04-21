@@ -6,7 +6,7 @@ const Paginate = () => {
   }
 
   return (
-    <div className="flex justify-center my-4">
+    <div className="flex justify-center mt-4 mb-10">
       <ReactPaginate
         previousLabel={'< Back'}
         nextLabel={'Next >'}

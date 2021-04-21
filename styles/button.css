@@ -1,6 +1,6 @@
 @layer base {
   .btn {
-    @apply flex justify-center items-center rounded-md
+    @apply flex justify-center items-center rounded-md px-4
   }
   
   .btn-primary {

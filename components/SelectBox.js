@@ -36,7 +36,7 @@ const SelectBox = (props) => {
 					width: 'auto',
 					height: 40,
 					backgroundColor: state.isSelected ? '#f0f2f5' : state.isFocused ? '#f5f8fa' : null,
-					color: '#282a2f',
+					color: '#656565',
 					marginLeft: 5,
 					marginRight: 5,
 					marginTop: 3,
@@ -54,19 +54,19 @@ const SelectBox = (props) => {
 					alignItems: 'center',
 					borderRadius: 4,
 					backgroundColor: props.backColor === 'primary' ? '#f26522' : props.backColor === 'secondary' ? '#282a2f' : 'transparent',
-					border: `1px solid ${props.backColor === 'transparent' ? '#cfdadc' : ''}`,
+					border: `1px solid ${props.backColor === 'transparent' ? '#656565' : ''}`,
 				}),
 				indicatorSeparator: () => ({}),
 				dropdownIndicator: (provided) => ({
 					...provided,
-					color: props.backColor === 'transparent' ? '#282a2f !important' : 'white !important'
+					color: props.backColor === 'transparent' ? '#656565 !important' : 'white !important'
 				}),
 				singleValue: (provided, state) => {
 					const opacity = state.isDisabled ? 0.5 : 1;
 					const transition = 'opacity 300ms';
-					const color = props.backColor === 'transparent' ? '#282a2f' : 'white';
+					const color = props.backColor === 'transparent' ? '#656565' : 'white';
 					const fontSize = 16;
-					const fontWeight = 600;
+					const fontWeight = 400;
 					return { ...provided, opacity, transition, color, fontSize, fontWeight };
 				}
 			}}

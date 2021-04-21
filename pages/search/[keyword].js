@@ -1,4 +1,4 @@
-import {useRouter} from "next/router"
+import { useRouter } from "next/router"
 import { BiSlider } from "react-icons/bi";
 
 import Header from "components/Header"
@@ -95,7 +95,9 @@ const BodyContainer = () => {
       <div className="w-full md:w-1/4 md:pr-6">
         <div className="flex justify-between items-center mb-4">
           <span className="text-sm font-bold">6 Results</span>
-          <button className="btn sm:hidden w-24 h-8 text-sm text-gray-800 border border-gray-800">FILTER<BiSlider className="ml-3" /></button>
+          <div className="sm:hidden">
+            <button className="btn h-8 text-sm text-gray-800 border border-gray-800">FILTER<BiSlider className="ml-3" /></button>
+          </div>
         </div>
         <hr className="hidden sm:block border-gray-300 my-4" />
         <div id="results-part" className="hidden sm:grid sm:grid-cols-2 sm:grid-rows-3 sm:gap-x-24 md:block">
@@ -125,19 +127,19 @@ const BodyContainer = () => {
             </div>
           ))
         }
-      </div>      
+      </div>
     </div>
   )
 }
 
 const Search = () => {
   const router = useRouter()
-  const {keyword} = router.query
+  const { keyword } = router.query
 
   return (
     <div>
       <Header theme="dark" />
-      <BreadCrumb data={['Search', keyword]}/>
+      <BreadCrumb data={['Search', keyword]} />
       <WordContainer />
       <BodyContainer />
       <Paginate />

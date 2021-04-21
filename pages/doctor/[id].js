@@ -67,7 +67,7 @@ const ImgContainer = () => {
           </div>
           <div id="rectangle" className="w-full sm:w-full lg:w-1/4 bg-gray-100 flex flex-col justify-center items-center rounded-md mt-4 lg:mt-0 p-6">
             <span className="text-sm text-gray-900">Talk to one of our care managers to help you get started.</span>
-            <button className="btn btn-secondary w-48 h-10 mt-6">Schedule Your Free Call</button>
+            <button className="btn btn-secondary h-10 mt-6">Schedule Your Free Call</button>
           </div>
         </div>
       </div>
