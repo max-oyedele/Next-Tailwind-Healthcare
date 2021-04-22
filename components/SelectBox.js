@@ -22,12 +22,12 @@ const SelectBox = (props) => {
 
 	return (
 		<Select
-			instanceId="customselect"
+			instanceId={props.id}
 			isMulti={props.isMulti ? true : false}
 			value={selectedOption}
 			onChange={handleChange}
 			options={options}
-      placeholder="Choose an office"
+      placeholder={props.placeholder??"Select options..."}
 			// className={classes.root}
 			// components={{ DropdownIndicator }}
 			styles={{
@@ -49,7 +49,7 @@ const SelectBox = (props) => {
 				}),
 				control: () => ({
 					// none of react-select's styles are passed to <Control />
-					height: 45,
+					height: props.height??45,
 					display: 'flex',
 					alignItems: 'center',
 					borderRadius: 4,

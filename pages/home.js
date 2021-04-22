@@ -1,5 +1,7 @@
 import { BiChevronDown, BiChevronLeftCircle, BiChevronRightCircle } from "react-icons/bi"
-import { IoIosArrowRoundUp, IoIosArrowRoundDown } from "react-icons/io";
+import { IoIosArrowRoundUp, IoIosArrowRoundDown } from "react-icons/io"
+
+import {useProvider} from "hooks/use-provider"
 
 import Header from "components/Header"
 import Footer from "components/Footer"
@@ -248,6 +250,8 @@ const ToolContainer = () => {
 }
 
 const StatContainer = () => {
+  const {call, setCall} = useProvider()
+
   return (
     <div className="flex flex-col items-center my-16">
       <span className="block w-11/12 sm:w-1/3 text-xl text-center font-bold">A proven solution beyond telemedicine</span>
@@ -270,7 +274,7 @@ const StatContainer = () => {
         </div>
       </div>
       <div className="flex justify-center mt-10">
-        <button className="btn btn-primary h-12">Schedule Your Free Call</button>
+        <button className="btn btn-primary h-12" onClick={()=>setCall(true)}>Schedule Your Free Call</button>
       </div>
     </div>
   )

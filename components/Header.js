@@ -1,4 +1,5 @@
 import React from "react"
+import Link from "next/link"
 import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
 import { BiMenu, BiX, BiLeftArrowAlt, BiUser, BiCart, BiSearchAlt2, BiChevronRight, BiChevronRightCircle } from "react-icons/bi";
@@ -7,18 +8,18 @@ export default function Header(props) {
   const [theme, setTheme] = React.useState(props.theme)
   const [openMenu, setOpenMenu] = React.useState(false)
 
-  React.useEffect(()=>{
+  React.useEffect(() => {
     const menuElement = document.querySelector('#menu')
-    if(openMenu){
+    if (openMenu) {
       disableBodyScroll(menuElement);
       setTheme('dark')
     }
-    else{
-      enableBodyScroll(menuElement);
+    else {
+      // enableBodyScroll(menuElement);
       setTheme(props.theme)
     }
 
-    return ()=>{
+    return () => {
       clearAllBodyScrollLocks();
     }
   }, [openMenu])
@@ -35,7 +36,7 @@ export default function Header(props) {
               !openMenu && <BiMenu className={`${theme === 'dark' ? 'text-gray-700' : 'text-white'} w-5 h-5 sm:w-7 sm:h-7`} />
             }
           </button>
-          <button className={`${openMenu ? "invisible" : ""} mx-4`}><BiUser className={`${theme === 'dark' ? 'text-gray-700' : 'text-white'} w-5 h-5 sm:w-7 sm:h-7`} /></button>
+          <Link href="/membership"><button className={`${openMenu ? "invisible" : ""} mx-4`}><BiUser className={`${theme === 'dark' ? 'text-gray-700' : 'text-white'} w-5 h-5 sm:w-7 sm:h-7`} /></button></Link>
           <button className={`${openMenu ? "invisible" : ""}`}><BiCart className={`${theme === 'dark' ? 'text-gray-700' : 'text-white'} w-5 h-5 sm:w-7 sm:h-7`} /></button>
         </div>
         <div id="sm-input" className="invisible xs:visible w-full sm:w-2/4 h-9 bg-gray-100 flex justify-center items-center rounded-md mx-2">
@@ -172,7 +173,7 @@ const Menu = () => {
                   <span className={`text-xs text-grayscale-60 uppercase ${index > 0 && 'mt-10'}`}>{menu.kind}</span>
                   {
                     menu.menu && menu.menu.length > 0 && menu.menu.map((item, index) => (
-                      <div className="flex justify-between items-center mt-4">
+                      <div key={index} className="flex justify-between items-center mt-4">
                         <span className="text-md text-grayscale-100 capitalize cursor-pointer" onMouseEnter={() => { setDepth2Menu(item.childs); setDepth3Menu('') }}>{item.name}</span>
                         <BiChevronRight className={`${(!depth2Menu || !item.childs) && 'hidden'} text-grayscale-100`} />
                       </div>
@@ -208,7 +209,7 @@ const Menu = () => {
                 <span className={`text-xs text-grayscale-60 uppercase ${index > 0 && 'mt-10'}`}>{menu.kind}</span>
                 {
                   menu.menu && menu.menu.length > 0 && menu.menu.map((item, index) => (
-                    <div className="flex justify-between items-center mt-4">
+                    <div key={index} className="flex justify-between items-center mt-4">
                       <span className="text-md text-grayscale-100 capitalize cursor-pointer" onMouseEnter={() => { setDepth3Menu(item.childs) }}>{item.name}</span>
                       <BiChevronRight className={`${(!depth3Menu || !item.childs) && 'hidden'} text-grayscale-100`} />
                     </div>
@@ -226,7 +227,7 @@ const Menu = () => {
                 <span className={`text-xs text-grayscale-60 uppercase ${index > 0 && 'mt-10'}`}>{menu.kind}</span>
                 {
                   menu.menu && menu.menu.length > 0 && menu.menu.map((item, index) => (
-                    <span className="text-md text-grayscale-100 capitalize cursor-pointer mt-4">{item.name}</span>
+                    <span key={index} className="text-md text-grayscale-100 capitalize cursor-pointer mt-4">{item.name}</span>
                   ))
                 }
               </div>

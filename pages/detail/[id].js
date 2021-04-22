@@ -1,14 +1,14 @@
 import React, { useState } from "react"
 import Link from "next/link"
 import { useRouter } from "next/router"
-import { BsCircleFill } from "react-icons/bs";
-import { FiChevronDown } from "react-icons/fi";
-import { BiX } from "react-icons/bi";
+import { BsCircleFill } from "react-icons/bs"
+import { BiX } from "react-icons/bi"
 
 import Header from "components/Header"
 import Footer from "components/Footer"
 import StarRating from "components/StarRating"
 import BreadCrumb from "components/BreadCrumb"
+import FrequentQuestion from "components/FrequentQuestion"
 
 const DetailContainer = (props) => {
   return (
@@ -74,7 +74,7 @@ const TextContainer = () => {
 }
 
 const QuestionContainer = () => {
-  const data = [
+  const frequentQuestions = [
     {
       question: 'Who should take this?',
       answers: []
@@ -98,26 +98,7 @@ const QuestionContainer = () => {
   ]
 
   return (
-    <div className="px-6 md:px-36 sm:flex">
-      <div className="sm:w-1/3 mt-4">
-        <span className="block w-1/2 text-2xl text-gray-900 font-bold">Frequently asked questions</span>
-        <span className="block text-md text-gray-800 mt-6">More questions?</span>
-        <button className="link">Visit our help center {'>'}</button>
-      </div>
-      <div className="sm:w-2/3 mt-4">
-        {
-          data.map((item, index) => (
-            <div key={index}>
-              <div className="flex justify-between items-center">
-                <span className="text-md text-gray-900">{item.question}</span>
-                <FiChevronDown className="text-gray-900" />
-              </div>
-              <hr className="border-gray-300 my-4" />
-            </div>
-          ))
-        }
-      </div>
-    </div>
+    <FrequentQuestion data={frequentQuestions} />
   )
 }
 

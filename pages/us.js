@@ -50,7 +50,7 @@ const TabContainer = (props) => {
         }
       </div>
       <div className="sm:hidden p-6">
-        <SelectBox options={props.tabs} selectedOption={props.selectedTab} setSelectedOption={props.setSelectedTab} backColor='transparent' />
+        <SelectBox id="tab-selector" options={props.tabs} selectedOption={props.selectedTab} setSelectedOption={props.setSelectedTab} backColor='transparent' />
       </div>
     </div>
   )

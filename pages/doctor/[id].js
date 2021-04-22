@@ -1,8 +1,10 @@
 import React from "react"
 import { useRouter } from "next/router"
-import { BiMap, BiVideo, BiHelpCircle } from "react-icons/bi";
-import { FaDiagnoses } from "react-icons/fa";
-import { BsCircleFill } from "react-icons/bs";
+import { BiMap, BiVideo, BiHelpCircle } from "react-icons/bi"
+import { FaDiagnoses } from "react-icons/fa"
+import { BsCircleFill } from "react-icons/bs"
+
+import { useProvider } from "hooks/use-provider"
 
 import Header from "components/Header"
 import Footer from "components/Footer"
@@ -38,6 +40,8 @@ const ImgContainer = () => {
     }
   }, []);
 
+  const {call, setCall} = useProvider()
+
   return (
     <div className="relative mt-10">
       <img src="/doctor/imgBack.png" className="" alt="img-back" style={{ width: '100%', height: imgContainerSize?.height }} />
@@ -67,7 +71,7 @@ const ImgContainer = () => {
           </div>
           <div id="rectangle" className="w-full sm:w-full lg:w-1/4 bg-gray-100 flex flex-col justify-center items-center rounded-md mt-4 lg:mt-0 p-6">
             <span className="text-sm text-gray-900">Talk to one of our care managers to help you get started.</span>
-            <button className="btn btn-secondary h-10 mt-6">Schedule Your Free Call</button>
+            <button className="btn btn-secondary h-10 mt-6" onClick={()=>setCall(true)}>Schedule Your Free Call</button>
           </div>
         </div>
       </div>
@@ -92,7 +96,7 @@ const TabContainer = (props) => {
         }
       </div>
       <div className="sm:hidden p-6">
-        <SelectBox options={props.tabs} selectedOption={props.selectedTab} setSelectedOption={props.setSelectedTab} backColor='transparent' />
+        <SelectBox id="tab-selector" options={props.tabs} selectedOption={props.selectedTab} setSelectedOption={props.setSelectedTab} backColor='transparent' />
       </div>
     </div>
   )

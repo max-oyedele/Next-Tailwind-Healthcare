@@ -2,13 +2,13 @@ import React, { useState } from "react"
 import {useRouter} from "next/router"
 import { BiCheck } from "react-icons/bi";
 import { HiMinusSm } from "react-icons/hi";
-import { FiChevronDown } from "react-icons/fi";
 
 import Header from "components/Header"
 import Footer from "components/Footer"
 import StarRating from "components/StarRating"
 import SelectBox from "components/SelectBox"
 import BreadCrumb from "components/BreadCrumb"
+import FrequentQuestion from "components/FrequentQuestion"
 
 const ProductContainer = () => {
   const passivePackages = [
@@ -123,7 +123,7 @@ const ProductContainer = () => {
         <hr className="border-gray-300 my-4" />
         <span className="text-md text-gray-900">Choose your physician location:</span>
         <div className="mt-4">
-          <SelectBox options={offices} selectedOption={selectedOffice} setSelectedOption={setSelectedOffice} backColor='transparent' />
+          <SelectBox id="office-selector" options={offices} selectedOption={selectedOffice} setSelectedOption={setSelectedOffice} backColor='transparent' />
         </div>
         <hr className="border-gray-300 my-6" />
         <div id="add-cart-area">
@@ -228,7 +228,7 @@ const StepContainer = () => {
 }
 
 const QuestionContainer = () => {
-  const data = [
+  const frequentQuestions = [
     {
       question: 'Who should take this?',
       answers: []
@@ -252,26 +252,7 @@ const QuestionContainer = () => {
   ]
 
   return (
-    <div className="px-6 md:px-36 sm:flex">
-      <div className="sm:w-1/3 mt-4">
-        <span className="block w-1/2 text-2xl text-gray-900 font-bold">Frequently asked questions</span>
-        <span className="block text-md text-gray-800 mt-6">More questions?</span>
-        <button className="link text-md">Visit our help center {'>'}</button>
-      </div>
-      <div className="sm:w-2/3 mt-4">
-        {
-          data.map((item, index) => (
-            <div key={index}>
-              <div className="flex justify-between items-center">
-                <span className="text-md text-gray-900">{item.question}</span>
-                <FiChevronDown className="text-gray-900" />
-              </div>
-              <hr className="border-gray-300 my-4" />
-            </div>
-          ))
-        }
-      </div>
-    </div>
+    <FrequentQuestion data={frequentQuestions} />
   )
 }
 

@@ -70,7 +70,7 @@ const Contact = () => {
       <div className="w-full md:w-1/2 mt-10">
         {
           questions.map((item, index) => (
-            <div>
+            <div key={index}>
               <div key={index} className="flex justify-between items-center">
                 <span className="text-sm text-gray-900 font-bold">{item.question}</span>
                 <BiChevronDown className="text-xl" />

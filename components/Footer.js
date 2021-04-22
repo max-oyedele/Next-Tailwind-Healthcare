@@ -1,6 +1,9 @@
 import React from "react"
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
+import { useProvider } from "hooks/use-provider"
 import SelectBox from "components/SelectBox"
+import ScheduleCall from "components/ScheduleCall"
 
 export default function Footer() {
   const newsletters = [
@@ -19,12 +22,27 @@ export default function Footer() {
   ]
   const [selectedNewsletter, setSelectedNewsletter] = React.useState(newsletters[0])
 
+  const { call, setCall } = useProvider()
+  React.useEffect(() => {
+    const callElement = document.querySelector('#call')
+    if (call) {
+      disableBodyScroll(callElement);
+    }
+    else {
+      // enableBodyScroll(menuElement);
+    }
+
+    return () => {
+      clearAllBodyScrollLocks();
+    }
+  }, [call])
+
   return (
     <div className="bg-grayscale-background px-6 py-10 lg:px-40">
       <div className="flex flex-col items-center">
         <span className="text-3xl text-grayscale-100 font-bold">BECAUSE YOU MATTER</span>
         <span className="text-sm text-grayscale-80 mt-4">Begin your journey toward whole health today</span>
-        <button className="btn btn-primary h-10 text-sm uppercase mt-6">Schedule Your Free Call</button>
+        <button className="btn btn-primary h-10 text-sm uppercase mt-6" onClick={() => setCall(true)}>Schedule Your Free Call</button>
       </div>
 
       <div className="sm:flex sm:flex-col md:grid md:grid-cols-3 mt-6">
@@ -67,7 +85,7 @@ export default function Footer() {
           <span className="text-sm text-grayscale-80 mt-4">Sign up for your personalized monthly newsletter.</span>
           <div className="sm:grid sm:grid-cols-2 sm:gap-x-4 md:flex md:flex-col">
             <div className="flex flex-col mt-6">
-              <SelectBox options={newsletters} selectedOption={selectedNewsletter} setSelectedOption={setSelectedNewsletter} backColor='transparent' />
+              <SelectBox id="news-selector" options={newsletters} selectedOption={selectedNewsletter} setSelectedOption={setSelectedNewsletter} backColor='transparent' />
             </div>
             <div id="email-container" className="flex h-12 border border-grayscale-80 rounded-md mt-6 p-1">
               <input placeholder="Email address" className="w-3/4 pl-2 text-grayscale-80 bg-transparent" />
@@ -116,6 +134,9 @@ export default function Footer() {
         </div>
         <span className="block text-xs text-grayscale-80 mt-6 md:mt-0">@Copyright @2021 Because Health. All rights reserved.</span>
       </div>
+
+      {call && <ScheduleCall />}
     </div>
   )
 }
+
