@@ -8,8 +8,8 @@ import Footer from "components/Footer"
 
 const LogoContainer = () => {
   return (
-    <div className="relative w-full flex justify-end" style={{ background: 'linear-gradient(90deg, #699EB4 0%, #96d0ea 36.98%, #5F9DB6 100%)' }}>
-      <img src="/home/logo.png" className="object-cover h-auto sm:h-96" alt="logo" />
+    <div className="relative w-full h-96 flex justify-end" style={{ background: 'linear-gradient(90deg, #3E7388 0%, #3E7388 1%, #5F9DB6 100%)' }}>
+      {/* <img src="/home/logo.png" className="object-cover h-auto sm:h-96" alt="logo" /> */}
       <div className="absolute w-full justify-center">
         <Header/>
       </div>
