@@ -1,7 +1,9 @@
 import { AppProvider } from 'hooks/use-provider'
 
 import '../styles/globals.css'
+import '../styles/font.css'
 import '../styles/button.css'
+import '../styles/span.css'
 import '../styles/paginate.css'
 
 function MyApp({ Component, pageProps }) {

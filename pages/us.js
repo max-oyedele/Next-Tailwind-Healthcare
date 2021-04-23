@@ -14,10 +14,10 @@ const TitleContainer = () => {
   return (
     <div className="px-6 md:px-36 flex flex-wrap">
       <div className="w-full sm:w-1/2 flex items-end mt-6">
-        <span className="text-3xl text-gray-900 font-bold">Customer Care</span>
+        <span className="text-3xl font-bold">Customer Care</span>
       </div>
       <div className="w-full sm:w-1/2 flex items-end mt-6">
-        <span className="text-sm text-gray-700">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
+        <span className="text-sm">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>
       </div>
     </div>
   )
@@ -40,7 +40,7 @@ const TabContainer = (props) => {
         {
           props.tabs.map((tab, index) => (
             <div key={index} className="relative flex flex-col items-center cursor-pointer mx-4" onClick={() => props.setSelectedTab(tab)}>
-              <span className={`text-sm text-center ${tab.value === props.selectedTab.value ? 'text-primary-100 font-bold' : 'text-gray-700'}`}>{tab.label}</span>
+              <span className={`text-sm text-center ${tab.value === props.selectedTab.value ? 'text-primary-100 font-bold' : 'text-grayscale-100'}`}>{tab.label}</span>
               {
                 tab.value === props.selectedTab.value &&
                 <BsCircleFill className="absolute -bottom-3 w-1 text-bluetone-dark" />

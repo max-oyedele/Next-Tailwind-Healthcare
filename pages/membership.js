@@ -25,8 +25,8 @@ const Membership = () => {
 const TitleContainer = () => {
   return (
     <div className="h-96 flex flex-col justify-center items-center bg-success-5 my-6 px-6 md:px-36">
-      <span className="text-sm text-grayscale-100">PRIVATE MEMBERSHIP</span>
-      <span className="text-4xl text-center text-grayscale-100 font-bold mt-6">Life lived differently, <br /> because health</span>
+      <span className="text-sm">PRIVATE MEMBERSHIP</span>
+      <span className="text-4xl text-center font-bold mt-6">Life lived differently, <br /> because health</span>
       <BiChevronDownCircle className="w-7 h-7 text-grayscale-80 mt-10" />
     </div>
   )
@@ -36,8 +36,8 @@ const HolisticContainer = () => {
   return (
     <div className="flex flex-col items-center my-16 px-6 md:px-36">
       <span className="text-sm text-primary-100">A HOLISTIC APPROACH TO YOUR HEALTH</span>
-      <span className="block md:w-1/2 lg:w-2/3 text-3xl text-center text-grayscale-100 mt-6">Experience lasting results and ongoing benefits</span>
-      <span className="block md:w-2/3 lg:w-3/4 text-sm sm:text-center text-grayscale-100 mt-6">Your Because Health private membership makes it faster and easier to achieve your health goals. <br /> We've created a membership-based holistic healthcare truly designed around our patient's needs. Partner with our specialist physicians for healthcare that is integrated, proactive and personalized to address the root cause of your symptoms.</span>
+      <span className="block md:w-1/2 lg:w-2/3 text-3xl text-center mt-6">Experience lasting results and ongoing benefits</span>
+      <span className="block md:w-2/3 lg:w-3/4 text-sm sm:text-center mt-6">Your Because Health private membership makes it faster and easier to achieve your health goals. <br /> We've created a membership-based holistic healthcare truly designed around our patient's needs. Partner with our specialist physicians for healthcare that is integrated, proactive and personalized to address the root cause of your symptoms.</span>
       <div className="w-full md:w-2/3 lg:w-3/4 bg-grayscale-60 h-72 rounded-md mt-6"></div>
     </div>
   )
@@ -71,8 +71,8 @@ const CompromiseContainer = () => {
   return (
     <div className="flex flex-col items-center my-16 px-6 md:px-36">
       <span className="text-sm text-primary-100">COMPROMISE-FREE CARE</span>
-      <span className="block md:w-1/2 lg:w-2/3 text-3xl text-center text-grayscale-100 mt-6">A transformative experience</span>
-      <span className="block md:w-2/3 lg:w-3/4 text-sm sm:text-center text-grayscale-100 mt-6">A doctor focused on helping you reach your health and wellness goals, and not just checking for cholesterol, diabetes and blood pressure.</span>
+      <span className="block md:w-1/2 lg:w-2/3 text-3xl text-center mt-6">A transformative experience</span>
+      <span className="block md:w-2/3 lg:w-3/4 text-sm sm:text-center mt-6">A doctor focused on helping you reach your health and wellness goals, and not just checking for cholesterol, diabetes and blood pressure.</span>
       <div className="relative w-full mt-6">
         <div id="backbox-pc" className="w-full hidden md:flex items-center md:px-12" style={{ height: 1230 }}>
           <div className="w-full" style={{ height: 880, background: 'linear-gradient(90deg, #CFD9DF 0%, #E2EBF0 100%)' }}></div>
@@ -86,11 +86,11 @@ const CompromiseContainer = () => {
               <div key={index} className={`w-full md:flex items-center ${index > 0 && 'mt-10'}`}>
                 <div className={`${index % 2 == 0 ? 'md:order-1 md:mr-4' : 'md:order-2 md:ml-4'} w-full md:w-2/3 h-72 sm:h-80 md:h-96 bg-grayscale-60 rounded-md`}></div>
                 <div className={`${index % 2 == 0 ? 'md:order-2' : 'md:order-1'} w-full md:w-1/3 max-h-72 sm:max-h-80 md:max-h-96 flex flex-col bg-grayscale-background rounded-md my-4 p-4`}>
-                  <span className="text-xl text-grayscale-100">{item.title}</span>
-                  <span className="text-xs text-grayscale-100 font-bold mt-2">{item.subTitle}</span>
-                  <span className="text-md text-grayscale-100 mt-2">{item.desc1}</span>
-                  <span className="text-md text-grayscale-100 mt-2">{item.desc2}</span>
-                  <span className="text-md text-grayscale-100 mt-2">{item.desc3}</span>
+                  <span className="text-xl">{item.title}</span>
+                  <span className="text-xs font-bold mt-2">{item.subTitle}</span>
+                  <span className="text-md mt-2">{item.desc1}</span>
+                  <span className="text-md mt-2">{item.desc2}</span>
+                  <span className="text-md mt-2">{item.desc3}</span>
                 </div>
               </div>
             ))
@@ -138,8 +138,8 @@ const GridContainer = () => {
   return (
     <div className="flex flex-col items-center my-16 px-6 md:px-36">
       <span className="text-sm text-primary-100">PRIVATE MEMBERSHIP</span>
-      <span className="block md:w-1/2 lg:w-2/3 text-3xl text-center text-grayscale-100 mt-6">Membership offers you the best way to beat the odds</span>
-      <span className="block md:w-2/3 lg:w-3/4 text-sm sm:text-center text-grayscale-100 mt-6">The in-depth data we obtain about your body and health enables you a chance to proactively avoid disease.</span>
+      <span className="block md:w-1/2 lg:w-2/3 text-3xl text-center mt-6">Membership offers you the best way to beat the odds</span>
+      <span className="block md:w-2/3 lg:w-3/4 text-sm sm:text-center mt-6">The in-depth data we obtain about your body and health enables you a chance to proactively avoid disease.</span>
       <div className="relative w-full mt-6">
         <div id="grid-backbox-pc" className="w-full hidden md:flex items-center md:px-12" style={{ height: 730 }}>
           <div className="w-full bg-category-weightloss" style={{ height: 500 }}></div>
@@ -156,8 +156,8 @@ const GridContainer = () => {
               <div key={index} className="flex flex-col bg-grayscale-background rounded-md p-4">
                 <span className="text-xs text-primary-60 uppercase">{item.title}</span>
                 <div className="bg-grayscale-60 h-44 rounded-md mt-4"></div>
-                <span className="text-md text-grayscale-100 font-bold mt-4">{item.subTitle}</span>
-                <span className="text-xs text-grayscale-100 mt-4">{item.desc}</span>
+                <span className="text-md font-bold mt-4">{item.subTitle}</span>
+                <span className="text-xs mt-4">{item.desc}</span>
               </div>
             ))
           }
@@ -174,8 +174,8 @@ const FormContainer = () => {
       <div className="w-full flex px-6 md:px-36 py-6 bg-success-5">
         <div className="hidden w-full md:flex bg-grayscale-60"></div>
         <div className="w-full flex flex-col bg-grayscale-white p-6">
-          <span className="text-xl text-grayscale-100 font-bold">Members get more</span>
-          <span className="text-sm text-grayscale-100 mt-4">Enter your email to receive more info on Membership.</span>
+          <span className="text-xl font-bold">Members get more</span>
+          <span className="text-sm mt-4">Enter your email to receive more info on Membership.</span>
           <input placeholder="Email address" className="w-3/4 h-12 pl-2 text-grayscale-100 bg-transparent border border-grayscale-80 rounded-md mt-6" />
           <span className="text-xs text-grayscale-80 mt-2">For more about how we use your information, see our Privacy Policy</span>
           <button className="btn btn-primary w-32 h-12 mt-10">SUBMIT</button>

@@ -45,32 +45,32 @@ const ImgContainer = () => {
   return (
     <div className="relative mt-10">
       <img src="/doctor/imgBack.png" className="" alt="img-back" style={{ width: '100%', height: imgContainerSize?.height }} />
-      <div className="absolute inset-0 px-6 lg:px-36 py-6 flex justify-center items-center">
+      <div className="absolute inset-0 px-6 lg:px-36 py-6 flex justify-center items-center text-grayscale-100">
         <div id="white-container" className="bg-white w-full p-4 flex flex-col sm:flex-row sm:flex-wrap rounded-md">
           <div id="profile-img" className="w-full sm:w-1/3 lg:w-1/4">
             <img src="/doctor/profile.png" className="object-cover w-full h-52 sm:object-fill sm:w-full sm:h-full rounded-md" alt="profile" />
           </div>
           <div id="text-part" className="w-full sm:w-2/3 lg:w-2/4 sm:px-10 py-4 flex flex-col justify-center">
             <div className="flex">
-              <span className="text-md text-gray-900 font-bold">Katarzyna(Kasla) Ostrezenska, MD</span>
+              <span className="text-md font-bold">Katarzyna(Kasla) Ostrezenska, MD</span>
               <BiHelpCircle className="ml-1" />
             </div>
-            <span className="text-sm text-gray-700 mt-4">Board Certified Plastic Surgeon</span>
+            <span className="text-sm mt-4">Board Certified Plastic Surgeon</span>
             <div className="mt-4">
               <StarRating />
             </div>
             <div className="flex items-center mt-4">
-              <BiMap /><span className="text-sm text-gray-800 ml-1">15 Broad St. Boston, MA 02019</span>
+              <BiMap /><span className="text-sm ml-1">15 Broad St. Boston, MA 02019</span>
             </div>
             <div className="flex mt-4">
-              <FaDiagnoses /><span className="text-sm text-gray-800 ml-1">Longevity, Wellbeing. Skincare, Weight Loss</span>
+              <FaDiagnoses /><span className="text-sm ml-1">Longevity, Wellbeing. Skincare, Weight Loss</span>
             </div>
             <div className="flex mt-4">
-              <BiVideo /><span className="text-sm text-gray-800 ml-1">Virtual Consultation Available</span>
+              <BiVideo /><span className="text-sm ml-1">Virtual Consultation Available</span>
             </div>
           </div>
           <div id="rectangle" className="w-full sm:w-full lg:w-1/4 bg-gray-100 flex flex-col justify-center items-center rounded-md mt-4 lg:mt-0 p-6">
-            <span className="text-sm text-gray-900">Talk to one of our care managers to help you get started.</span>
+            <span className="text-sm">Talk to one of our care managers to help you get started.</span>
             <button className="btn btn-secondary h-10 mt-6" onClick={()=>setCall(true)}>Schedule Your Free Call</button>
           </div>
         </div>
@@ -86,7 +86,7 @@ const TabContainer = (props) => {
         {
           props.tabs.map((tab, index) => (
             <div key={index} className="relative flex flex-col items-center cursor-pointer mx-4" onClick={() => props.setSelectedTab(tab)}>
-              <span className={`text-sm text-center ${tab.value === props.selectedTab.value ? 'text-primary-100 font-bold' : 'text-gray-700'}`}>{tab.label}</span>
+              <span className={`text-sm text-center ${tab.value === props.selectedTab.value ? 'text-primary-100 font-bold' : 'text-grayscale-100'}`}>{tab.label}</span>
               {
                 tab.value === props.selectedTab.value &&
                 <BsCircleFill className="absolute -bottom-3 w-1 text-bluetone-dark" />

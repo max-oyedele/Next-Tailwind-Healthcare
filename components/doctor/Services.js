@@ -147,7 +147,7 @@ const BodyContainer = (props) => {
         <div className="flex justify-between items-center mb-4">
           <span className="text-sm font-bold">{data.length} Results</span>
           <div className="sm:hidden">
-            <button onClick={() => props.setFilterLayer(true)} className="btn h-8 text-sm text-gray-800 border border-gray-800">FILTER<BiSlider className="ml-3" /></button>
+            <button onClick={() => props.setFilterLayer(true)} className="btn h-8 text-sm text-grayscale-100 border border-gray-800">FILTER<BiSlider className="ml-3" /></button>
           </div>
         </div>
         <hr className="hidden sm:block border-gray-300 my-4" />
@@ -157,7 +157,7 @@ const BodyContainer = (props) => {
               <div key={index}>
                 <div className="flex items-center">
                   {/* <input id={`${tag.name}`} type="checkbox" className="cursor-pointer" /> */}
-                  <label htmlFor="articles" className="text-xs text-gray-900 cursor-pointer ml-1">{tag.name} ({tag.count})</label>
+                  <label htmlFor="articles" className="text-xs text-grayscale-100 cursor-pointer ml-1">{tag.name} ({tag.count})</label>
                 </div>
                 <hr className="border-gray-300 my-4" />
               </div>
@@ -169,12 +169,12 @@ const BodyContainer = (props) => {
         {
           data.map((item, index) => (
             <div key={index} className="bg-gray-100 p-3 flex flex-col mb-6">
-              <span className="text-sm text-gray-800 font-bold uppercase">{item.title}</span>
-              <span className="text-xs text-gray-700 mt-1">{item.label}</span>
+              <span className="text-sm font-bold uppercase">{item.title}</span>
+              <span className="text-xs mt-1">{item.label}</span>
               <img src={item.img} className="mt-4" alt="result" />
-              <span className="text-sm text-gray-800 mt-4 font-bold">{item.subTitle}</span>
-              <span className="text-xs text-gray-700 mt-1">{item.desc}</span>
-              <span className="text-xs text-gray-800 mt-4 font-bold">{item.tag}</span>
+              <span className="text-sm mt-4 font-bold">{item.subTitle}</span>
+              <span className="text-xs mt-1">{item.desc}</span>
+              <span className="text-xs mt-4 font-bold">{item.tag}</span>
             </div>
           ))
         }
@@ -203,33 +203,33 @@ const FilterLayer = (props) => {
     <div className="fixed inset-0">
       <div id="full-overlay" className="bg-gray-100 w-full h-full opacity-60"></div>
       <div id="right-sidebar" className="absolute inset-0 flex justify-end">
-        <div className="bg-gray-200 w-full">
+        <div className="bg-gray-200 w-full text-grayscale-100">
           <div id="header" className="flex justify-between items-center bg-gray-300 h-20 p-10">
             <div className="flex items-center">
               <BiSlider />
-              <span className="text-md text-gray-900 font-bold uppercase ml-1">FILTER BY</span>
+              <span className="text-md font-bold uppercase ml-1">FILTER BY</span>
             </div>
             <BiX className="text-2xl cursor-pointer" onClick={() => props.setFilterLayer(false)} />
           </div>
           <div id="body" className="flex flex-col m-10">
-            <span className="text-xl text-gray-900 font-bold">Gender</span>
+            <span className="text-xl font-bold">Gender</span>
             <div className="grid grid-cols-2 gap-x-4 mt-4">
               <div className="flex items-center">
                 <input id="women" type="checkbox" className="cursor-pointer" />
-                <label htmlFor="women" className="text-md text-gray-900 cursor-pointer ml-1">Women</label>
+                <label htmlFor="women" className="text-md cursor-pointer ml-1">Women</label>
               </div>
               <div className="flex items-center">
                 <input id="men" type="checkbox" className="cursor-pointer" />
-                <label htmlFor="men" className="text-md text-gray-900 cursor-pointer ml-1">Men</label>
+                <label htmlFor="men" className="text-md cursor-pointer ml-1">Men</label>
               </div>
             </div>
             <hr className="border-gray-300 my-6" />
-            <span className="text-xl text-gray-900 font-bold">Health Needs</span>
+            <span className="text-xl font-bold">Health Needs</span>
             {
               [1, 2, 3, 4].map((_, index) => (
                 <div key={index} className="flex items-center mt-4">
                   <input id={`lorem_${_}`} type="checkbox" className="cursor-pointer" />
-                  <label htmlFor={`lorem_${_}`} className="text-md text-gray-900 cursor-pointer ml-1">Lorem ipsum</label>
+                  <label htmlFor={`lorem_${_}`} className="text-md cursor-pointer ml-1">Lorem ipsum</label>
                 </div>
               ))
             }

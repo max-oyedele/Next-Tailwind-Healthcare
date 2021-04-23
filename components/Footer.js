@@ -40,7 +40,7 @@ export default function Footer() {
   return (
     <div className="bg-grayscale-background px-6 py-10 lg:px-40">
       <div className="flex flex-col items-center">
-        <span className="text-3xl text-grayscale-100 font-bold">BECAUSE YOU MATTER</span>
+        <span className="text-3xl font-bold">BECAUSE YOU MATTER</span>
         <span className="text-sm text-grayscale-80 mt-4">Begin your journey toward whole health today</span>
         <button className="btn btn-primary h-10 text-sm uppercase mt-6" onClick={() => setCall(true)}>Schedule Your Free Call</button>
       </div>
@@ -50,12 +50,12 @@ export default function Footer() {
           <span className="text-md text-grayscale-80">Contact Us</span>
           <div className="sm:grid sm:grid-cols-3 sm:gap-x-4 md:flex md:flex-col">
             <div className="flex flex-col mt-6">
-              <span className="text-md text-grayscale-100 font-bold">Customer Care</span>
+              <span className="text-md font-bold">Customer Care</span>
               <span className="text-sm text-grayscale-80 mt-4">+1 206-751-1321</span>
               <span className="text-sm text-grayscale-80 mt-4">care@becausehealth.com</span>
             </div>
             <div className="flex flex-col mt-6">
-              <span className="text-md text-grayscale-100 font-bold">To Book a Program</span>
+              <span className="text-md font-bold">To Book a Program</span>
               <span className="text-sm text-grayscale-80 mt-4">+1 206-821-3115</span>
               <span className="text-sm text-grayscale-80 mt-4">reservation@becausehealth.com</span>
             </div>

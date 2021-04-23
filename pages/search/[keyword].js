@@ -96,7 +96,7 @@ const BodyContainer = () => {
         <div className="flex justify-between items-center mb-4">
           <span className="text-sm font-bold">6 Results</span>
           <div className="sm:hidden">
-            <button className="btn h-8 text-sm text-gray-800 border border-gray-800">FILTER<BiSlider className="ml-3" /></button>
+            <button className="btn h-8 text-sm text-grayscale-100 border border-gray-800">FILTER<BiSlider className="ml-3" /></button>
           </div>
         </div>
         <hr className="hidden sm:block border-gray-300 my-4" />
@@ -106,7 +106,7 @@ const BodyContainer = () => {
               <div key={index}>
                 <div className="flex items-center">
                   <input id={`${tag.name}`} type="checkbox" className="cursor-pointer" />
-                  <label htmlFor={`${tag.name}`} className="text-xs text-gray-900 cursor-pointer ml-1">{tag.name} ({tag.count})</label>
+                  <label htmlFor={`${tag.name}`} className="text-xs text-grayscale-100 cursor-pointer ml-1">{tag.name} ({tag.count})</label>
                 </div>
                 <hr className="border-gray-300 my-4" />
               </div>
@@ -118,12 +118,12 @@ const BodyContainer = () => {
         {
           data.map((item, index) => (
             <div key={index} className="bg-gray-100 p-3 flex flex-col mb-6">
-              <span className="text-sm text-gray-800 font-bold uppercase">{item.title}</span>
-              <span className="text-xs text-gray-700 mt-1">{item.label}</span>
+              <span className="text-sm font-bold uppercase">{item.title}</span>
+              <span className="text-xs mt-1">{item.label}</span>
               <img src={item.img} className="mt-4" alt="result" />
-              <span className="text-sm text-gray-800 mt-4 font-bold">{item.subTitle}</span>
-              <span className="text-xs text-gray-700 mt-1">{item.desc}</span>
-              <span className="text-xs text-gray-800 mt-4 font-bold">{item.tag}</span>
+              <span className="text-sm mt-4 font-bold">{item.subTitle}</span>
+              <span className="text-xs mt-1">{item.desc}</span>
+              <span className="text-xs mt-4 font-bold">{item.tag}</span>
             </div>
           ))
         }

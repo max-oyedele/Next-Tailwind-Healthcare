@@ -18,8 +18,8 @@ const StarRating = () => {
         numberOfStars={5}
         name='rating'
       />
-      <span className="text-sm text-gray-900 ml-2">{rating}</span>
-      <span className="text-sm text-gray-900 ml-4">89 reviews</span>
+      <span className="text-sm ml-2">{rating}</span>
+      <span className="text-sm ml-4">89 reviews</span>
     </div>
   )
 }

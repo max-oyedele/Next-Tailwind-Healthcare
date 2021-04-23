@@ -9,13 +9,13 @@ const BreadCrumb = (props) => {
             if (index < data.length - 1) {
               return (
                 <div key={index}>
-                  <span className="text-sm text-gray-800">{item}</span>
-                  <span className="text-sm text-gray-800 mx-2">/</span>
+                  <span className="text-sm">{item}</span>
+                  <span className="text-sm mx-2">/</span>
                 </div>
               )
             }
             return (
-              <span key={index} className="text-sm text-gray-800">{item}</span>
+              <span key={index} className="text-sm">{item}</span>
             )
           })
         }

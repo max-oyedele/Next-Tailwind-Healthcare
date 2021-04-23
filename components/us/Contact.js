@@ -52,27 +52,27 @@ const Contact = () => {
   ]
 
   return (
-    <div className="px-6 md:px-36 flex flex-col items-center">
-      <span className="block w-11/12 md:w-1/2 text-2xl text-center text-gray-900 font-bold mt-16">Looking for the fastest way to have all your questions answered?</span>
-      <span className="block w-11/12 md:w-1/2 text-sm text-center text-gray-700 mt-10">We want to hear from you. Whether you've got questions on Because Health product, your delivery or a suggestion for how we can improve.</span>
+    <div className="px-6 md:px-36 flex flex-col items-center text-grayscale-100">
+      <span className="block w-11/12 md:w-1/2 text-2xl text-center font-bold mt-16">Looking for the fastest way to have all your questions answered?</span>
+      <span className="block w-11/12 md:w-1/2 text-sm text-center mt-10">We want to hear from you. Whether you've got questions on Because Health product, your delivery or a suggestion for how we can improve.</span>
       <div className="w-full sm:grid sm:grid-cols-3 sm:gap-x-10 mt-10">
         {
           ways.map((item, index) => (
             <div key={index} className="bg-gray-100 w-full flex flex-col p-4 mt-4">
-              <item.icon className="text-2xl text-gray-700" />
-              <span className="text-md text-gray-700 font-bold uppercase mt-6">{item.name}</span>
-              <span className="text-sm text-gray-700 mt-6">{item.desc}</span>
+              <item.icon className="text-2xl" />
+              <span className="text-md font-bold uppercase mt-6">{item.name}</span>
+              <span className="text-sm mt-6">{item.desc}</span>
             </div>
           ))
         }
       </div>
-      <span className="block w-11/12 md:w-1/2 text-md text-center text-gray-700 mt-16">Have you already clicked through our FAQ section to see if you can find the answer to your question there?</span>
+      <span className="block w-11/12 md:w-1/2 text-md text-center mt-16">Have you already clicked through our FAQ section to see if you can find the answer to your question there?</span>
       <div className="w-full md:w-1/2 mt-10">
         {
           questions.map((item, index) => (
             <div key={index}>
               <div key={index} className="flex justify-between items-center">
-                <span className="text-sm text-gray-900 font-bold">{item.question}</span>
+                <span className="text-sm font-bold">{item.question}</span>
                 <BiChevronDown className="text-xl" />
               </div>
               <hr className="border-gray-300 my-6" />
@@ -99,10 +99,10 @@ const CForm = () => {
 
       <div className="flex items-center mt-4">
         <input id='subscribe' type="checkbox" className="cursor-pointer" />
-        <label htmlFor="subscribe" className="text-sm text-gray-900 cursor-pointer ml-1">Subscribe to the Because Health Newsletter</label>
+        <label htmlFor="subscribe" className="text-sm text-grayscale-100 cursor-pointer ml-1">Subscribe to the Because Health Newsletter</label>
       </div>
       <button className="btn btn-primary h-10 my-6">Send Contact Request</button>
-      <span className="text-xs text-gray-700">By entering my data and pressing the button "Send contact request" I agree to my e-mail address and my name being used to answer my contact request.</span>
+      <span className="text-xs">By entering my data and pressing the button "Send contact request" I agree to my e-mail address and my name being used to answer my contact request.</span>
     </div>
   )
 }

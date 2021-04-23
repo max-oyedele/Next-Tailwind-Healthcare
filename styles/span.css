@@ -1,0 +1,5 @@
+@layer base {
+  span {
+    @apply text-grayscale-100
+  }
+}

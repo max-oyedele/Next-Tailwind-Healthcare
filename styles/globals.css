@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  font-family: TT Norms Pro Regular
+}
+
 input, textarea {
   outline: none
 }

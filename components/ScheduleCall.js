@@ -93,14 +93,14 @@ const ScheduleCall = () => {
                 </div>
                 <div className="flex flex-col">
                   <span className="text-sm text-grayscale-80 mt-6">Pablo Chiquival</span>
-                  <span className="text-xl text-grayscale-100 font-bold mt-2">Pablo Chiquival 1:1</span>
+                  <span className="text-xl font-bold mt-2">Pablo Chiquival 1:1</span>
                   <div className="flex mt-6"><RiTimeFill className="text-grayscale-80" /><span className="text-xs text-grayscale-80 ml-1">30 min</span></div>
                   <div className="flex mt-4"><RiPhoneFill className="text-grayscale-80" /><span className="text-xs text-grayscale-80 ml-1">Phone call</span></div>
                   <span className="text-sm text-grayscale-80 mt-6">Because Health's COVID-19 testing and Workplace Health™ health services.</span>
                 </div>
               </div>
               <div id="right-box" className="w-full md:w-1/2 mt-6 sm:mt-0 sm:pl-4">
-                <span className="text-md text-grayscale-100 font-bold mt-2">Select a Date & Time</span>
+                <span className="text-md font-bold mt-2">Select a Date & Time</span>
                 <div className="flex flex-col items-center mt-6">
                   <Calendar
                     value={selectedDay}

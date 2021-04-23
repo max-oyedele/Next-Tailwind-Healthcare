@@ -30,26 +30,25 @@ export default function Header(props) {
         <div className="flex sm:w-1/4">
           <button className="" onClick={() => setOpenMenu(!openMenu)}>
             {
-              openMenu && <BiX className={`${theme === 'dark' ? 'text-gray-700' : 'text-white'} w-5 h-5 sm:w-7 sm:h-7`} />
+              openMenu && <BiX className={`${theme === 'dark' ? 'text-grayscale-100' : 'text-white'} w-5 h-5 sm:w-7 sm:h-7`} />
             }
             {
-              !openMenu && <BiMenu className={`${theme === 'dark' ? 'text-gray-700' : 'text-white'} w-5 h-5 sm:w-7 sm:h-7`} />
+              !openMenu && <BiMenu className={`${theme === 'dark' ? 'text-grayscale-100' : 'text-white'} w-5 h-5 sm:w-7 sm:h-7`} />
             }
           </button>
-          <Link href="/membership"><button className={`${openMenu ? "invisible" : ""} mx-4`}><BiUser className={`${theme === 'dark' ? 'text-gray-700' : 'text-white'} w-5 h-5 sm:w-7 sm:h-7`} /></button></Link>
-          <button className={`${openMenu ? "invisible" : ""}`}><BiCart className={`${theme === 'dark' ? 'text-gray-700' : 'text-white'} w-5 h-5 sm:w-7 sm:h-7`} /></button>
+          <Link href="/membership"><button className={`${openMenu ? "invisible" : ""} mx-4`}><BiUser className={`${theme === 'dark' ? 'text-grayscale-100' : 'text-white'} w-5 h-5 sm:w-7 sm:h-7`} /></button></Link>
+          <button className={`${openMenu ? "invisible" : ""}`}><BiCart className={`${theme === 'dark' ? 'text-grayscale-100' : 'text-white'} w-5 h-5 sm:w-7 sm:h-7`} /></button>
         </div>
         <div id="sm-input" className="invisible xs:visible w-full sm:w-2/4 h-9 bg-gray-100 flex justify-center items-center rounded-md mx-2">
-          <BiSearchAlt2 className="text-gray-600 w-5 h-5" />
+          <BiSearchAlt2 className="text-grayscale-100 w-5 h-5" />
           <input className="w-3/4 h-full mx-2 text-sm bg-transparent" placeholder="Search for solutions to your health concerns" />
         </div>
-        <div className={`flex flex-col sm:w-1/4 items-end ${theme === 'dark' ? 'text-gray-700' : 'text-white'}`}>
-          <span className="text-sm sm:text-lg block leading-5">Because</span>
-          <span className="text-xs sm:text-sm">Health</span>
+        <div className={`flex flex-col sm:w-1/4 items-end ${theme === 'dark' ? 'text-grayscale-100' : 'text-white'}`}>
+          <img src="/because-health.png" alt="logo-text"/>
         </div>
       </div>
       <div id="xs-input" className="visible xs:hidden h-9 bg-gray-100 flex justify-center items-center rounded-md mt-4">
-        <BiSearchAlt2 className="text-gray-600 w-5 h-5 ml-3" />
+        <BiSearchAlt2 className="text-grayscale-100 w-5 h-5 ml-3" />
         <input className="w-full mx-2 text-xs bg-transparent" placeholder="Search for solutions to your health concerns" />
       </div>
 
@@ -174,7 +173,7 @@ const Menu = () => {
                   {
                     menu.menu && menu.menu.length > 0 && menu.menu.map((item, index) => (
                       <div key={index} className="flex justify-between items-center mt-4">
-                        <span className="text-md text-grayscale-100 capitalize cursor-pointer" onMouseEnter={() => { setDepth2Menu(item.childs); setDepth3Menu('') }}>{item.name}</span>
+                        <span className="text-md capitalize cursor-pointer" onMouseEnter={() => { setDepth2Menu(item.childs); setDepth3Menu('') }}>{item.name}</span>
                         <BiChevronRight className={`${(!depth2Menu || !item.childs) && 'hidden'} text-grayscale-100`} />
                       </div>
                     ))
@@ -186,9 +185,9 @@ const Menu = () => {
           <div id="pc-portal-footer" className="hidden md:flex md:flex-col">
             <hr className="w-16 border-grayscale-60 my-6" />
             <span className="text-sm text-grayscale-60">PORTAL</span>
-            <span className="text-sm text-grayscale-100 mt-4">CUSTOMER CARE</span>
-            <span className="text-sm text-grayscale-100 mt-4">CART</span>
-            <span className="text-sm text-grayscale-100 mt-4">LOGIN</span>
+            <span className="text-sm mt-4">CUSTOMER CARE</span>
+            <span className="text-sm mt-4">CART</span>
+            <span className="text-sm mt-4">LOGIN</span>
 
             <hr className="w-16 border-grayscale-60 my-6" />
             <span className="text-sm text-grayscale-60">FOLLOW BECAUSE HEALTH</span>
@@ -210,7 +209,7 @@ const Menu = () => {
                 {
                   menu.menu && menu.menu.length > 0 && menu.menu.map((item, index) => (
                     <div key={index} className="flex justify-between items-center mt-4">
-                      <span className="text-md text-grayscale-100 capitalize cursor-pointer" onMouseEnter={() => { setDepth3Menu(item.childs) }}>{item.name}</span>
+                      <span className="text-md capitalize cursor-pointer" onMouseEnter={() => { setDepth3Menu(item.childs) }}>{item.name}</span>
                       <BiChevronRight className={`${(!depth3Menu || !item.childs) && 'hidden'} text-grayscale-100`} />
                     </div>
                   ))
@@ -227,7 +226,7 @@ const Menu = () => {
                 <span className={`text-xs text-grayscale-60 uppercase ${index > 0 && 'mt-10'}`}>{menu.kind}</span>
                 {
                   menu.menu && menu.menu.length > 0 && menu.menu.map((item, index) => (
-                    <span key={index} className="text-md text-grayscale-100 capitalize cursor-pointer mt-4">{item.name}</span>
+                    <span key={index} className="text-md capitalize cursor-pointer mt-4">{item.name}</span>
                   ))
                 }
               </div>
@@ -242,9 +241,9 @@ const Menu = () => {
             <img src="/header/menu-ad-tablet.png" className="hidden sm:flex md:hidden object-contain w-full rounded-md" alt="menu-ad" />
             <img src="/header/menu-ad-phone.png" className="sm:hidden object-contain w-full rounded-md" alt="menu-ad" />
             <div className="absolute inset-0 flex flex-col justify-center bg-success-5 bg-opacity-80 rounded-md p-4">
-              <span className="text-sm text-grayscale-100 uppercase">One Membership</span>
-              <span className="text-xl text-grayscale-100 font-bold mt-4">Designed for a healthier you</span>
-              <span className="text-sm text-grayscale-100 mt-4">Experience modern care from specialist doctors.</span>
+              <span className="text-sm uppercase">One Membership</span>
+              <span className="text-xl font-bold mt-4">Designed for a healthier you</span>
+              <span className="text-sm mt-4">Experience modern care from specialist doctors.</span>
               <BiChevronRightCircle className="w-5 h-5 mt-4" />
             </div>
           </div>
@@ -253,9 +252,9 @@ const Menu = () => {
         <div id="tablet-phone-portal-footer" className="md:hidden flex flex-col">
           <hr className="w-16 border-grayscale-60 my-6" />
           <span className="text-sm text-grayscale-60">PORTAL</span>
-          <span className="text-sm text-grayscale-100 mt-4">CUSTOMER CARE</span>
-          <span className="text-sm text-grayscale-100 mt-4">CART</span>
-          <span className="text-sm text-grayscale-100 mt-4">LOGIN</span>
+          <span className="text-sm mt-4">CUSTOMER CARE</span>
+          <span className="text-sm mt-4">CART</span>
+          <span className="text-sm mt-4">LOGIN</span>
 
           <hr className="w-16 border-grayscale-60 my-6" />
           <span className="text-sm text-grayscale-60">FOLLOW BECAUSE HEALTH</span>
