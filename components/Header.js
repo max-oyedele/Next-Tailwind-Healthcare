@@ -2,8 +2,6 @@ import React from "react"
 import Link from "next/link"
 import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
-import { BiMenu, BiX, BiLeftArrowAlt, BiUser, BiCart, BiSearchAlt2, BiChevronRight, BiChevronRightCircle } from "react-icons/bi";
-
 export default function Header(props) {
   const [theme, setTheme] = React.useState(props.theme)
   const [openMenu, setOpenMenu] = React.useState(false)
@@ -30,26 +28,32 @@ export default function Header(props) {
         <div className="flex sm:w-1/4">
           <button className="" onClick={() => setOpenMenu(!openMenu)}>
             {
-              openMenu && <BiX className={`${theme === 'dark' ? 'text-grayscale-100' : 'text-white'} w-5 h-5 sm:w-7 sm:h-7`} />
+              openMenu && <img src='/icons/action/close_dark.svg' alt="close" />
             }
             {
-              !openMenu && <BiMenu className={`${theme === 'dark' ? 'text-grayscale-100' : 'text-white'} w-5 h-5 sm:w-7 sm:h-7`} />
+              !openMenu && <img src={`${theme == 'dark' ? '/icons/action/hamburger_dark.svg' : '/icons/action/hamburger_light.svg'}`} alt="hamburger" />
             }
           </button>
-          <Link href="/membership"><button className={`${openMenu ? "invisible" : ""} mx-4`}><BiUser className={`${theme === 'dark' ? 'text-grayscale-100' : 'text-white'} w-5 h-5 sm:w-7 sm:h-7`} /></button></Link>
-          <button className={`${openMenu ? "invisible" : ""}`}><BiCart className={`${theme === 'dark' ? 'text-grayscale-100' : 'text-white'} w-5 h-5 sm:w-7 sm:h-7`} /></button>
+          <Link href="/membership">
+            <button className={`${openMenu ? "invisible" : ""} mx-4`}>
+              <img src={`${theme == 'dark' ? '/icons/action/user_dark.svg' : '/icons/action/user_light.svg'}`} alt="user" />
+            </button>
+          </Link>
+          <button className={`${openMenu ? "invisible" : ""}`}>
+            <img src={`${theme == 'dark' ? '/icons/action/caddy_dark.svg' : '/icons/action/caddy_light.svg'}`} alt="caddy" />
+          </button>
         </div>
         <div id="sm-input" className="invisible xs:visible w-full sm:w-2/4 h-9 bg-gray-100 flex justify-center items-center rounded-md mx-2">
-          <BiSearchAlt2 className="text-grayscale-100 w-5 h-5" />
+          <img src='/icons/generic/search.svg' alt="search" />
           <input className="w-3/4 h-full mx-2 text-sm bg-transparent" placeholder="Search for solutions to your health concerns" />
         </div>
         <div className={`flex flex-col sm:w-1/4 items-end ${theme === 'dark' ? 'text-grayscale-100' : 'text-white'}`}>
-          <img src="/because-health.png" alt="logo-text"/>
+          <img src={`${theme == 'dark' ? '/logo_dark.svg' : '/logo_light.svg'}`} alt="logo" />
         </div>
       </div>
       <div id="xs-input" className="visible xs:hidden h-9 bg-gray-100 flex justify-center items-center rounded-md mt-4">
-        <BiSearchAlt2 className="text-grayscale-100 w-5 h-5 ml-3" />
-        <input className="w-full mx-2 text-xs bg-transparent" placeholder="Search for solutions to your health concerns" />
+        <img src='/icons/generic/search.svg' alt="search" />
+        <input className="mx-2 text-xs bg-transparent" placeholder="Search for solutions to your health concerns" />
       </div>
 
       { openMenu && <Menu />}
@@ -174,7 +178,7 @@ const Menu = () => {
                     menu.menu && menu.menu.length > 0 && menu.menu.map((item, index) => (
                       <div key={index} className="flex justify-between items-center mt-4">
                         <span className="text-md capitalize cursor-pointer" onMouseEnter={() => { setDepth2Menu(item.childs); setDepth3Menu('') }}>{item.name}</span>
-                        <BiChevronRight className={`${(!depth2Menu || !item.childs) && 'hidden'} text-grayscale-100`} />
+                        <button className={`${(!depth2Menu || !item.childs) && 'hidden'}`}><img src="/icons/action/chevron_right.svg" className="w-4 h-4" alt="chevron_right" /></button>
                       </div>
                     ))
                   }
@@ -210,7 +214,7 @@ const Menu = () => {
                   menu.menu && menu.menu.length > 0 && menu.menu.map((item, index) => (
                     <div key={index} className="flex justify-between items-center mt-4">
                       <span className="text-md capitalize cursor-pointer" onMouseEnter={() => { setDepth3Menu(item.childs) }}>{item.name}</span>
-                      <BiChevronRight className={`${(!depth3Menu || !item.childs) && 'hidden'} text-grayscale-100`} />
+                      <button className={`${(!depth3Menu || !item.childs) && 'hidden'}`}><img src="/icons/action/chevron_right.svg" className="w-4 h-4" alt="chevron_right" /></button>
                     </div>
                   ))
                 }
@@ -244,7 +248,7 @@ const Menu = () => {
               <span className="text-sm uppercase">One Membership</span>
               <span className="text-xl font-bold mt-4">Designed for a healthier you</span>
               <span className="text-sm mt-4">Experience modern care from specialist doctors.</span>
-              <BiChevronRightCircle className="w-5 h-5 mt-4" />
+              <button className="mt-4"><img src="/icons/action/chevron_right_circle.svg" className="w-4 h-4" alt="chevron_right_circle" /></button>
             </div>
           </div>
         </div>

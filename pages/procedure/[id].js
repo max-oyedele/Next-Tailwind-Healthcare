@@ -1,7 +1,5 @@
 import React, { useState } from "react"
 import {useRouter} from "next/router"
-import { BiCheck } from "react-icons/bi";
-import { HiMinusSm } from "react-icons/hi";
 
 import Header from "components/Header"
 import Footer from "components/Footer"
@@ -162,17 +160,17 @@ const ProsConsContainer = () => {
       <div className="sm:grid sm:grid-cols-2 sm:gap-x-4">
         <div className="bg-gray-100 flex flex-col mt-6 p-4">
           <span className="text-md font-bold">Pros</span>
-          <div className="flex mt-4"><BiCheck /><span className="text-sm ml-1">Eliminates or minimizes wrinkles</span></div>
-          <div className="flex mt-4"><BiCheck /><span className="text-sm ml-1">Results within 2-7days, with nearly 100% efficacy</span></div>
-          <div className="flex mt-4"><BiCheck /><span className="text-sm ml-1">Convenient, with no downtime</span></div>
-          <div className="flex mt-4"><BiCheck /><span className="text-sm ml-1">FDA-approved, with minimal health risks</span></div>
+          <div className="flex mt-4"><span className="text-sm ml-1">✓ Eliminates or minimizes wrinkles</span></div>
+          <div className="flex mt-4"><span className="text-sm ml-1">✓ Results within 2-7days, with nearly 100% efficacy</span></div>
+          <div className="flex mt-4"><span className="text-sm ml-1">✓ Convenient, with no downtime</span></div>
+          <div className="flex mt-4"><span className="text-sm ml-1">✓ FDA-approved, with minimal health risks</span></div>
         </div>
         <div className="bg-gray-100 flex flex-col mt-6 p-4">
           <span className="text-md font-bold">Cons</span>
-          <div className="flex mt-4"><HiMinusSm /><span className="text-sm ml-1">Eliminates or minimizes wrinkles</span></div>
-          <div className="flex mt-4"><HiMinusSm /><span className="text-sm ml-1">Results within 2-7days, with nearly 100% efficacy</span></div>
-          <div className="flex mt-4"><HiMinusSm /><span className="text-sm ml-1">Convenient, with no downtime</span></div>
-          <div className="flex mt-4"><HiMinusSm /><span className="text-sm ml-1">FDA-approved, with minimal health risks</span></div>
+          <div className="flex mt-4"><span className="text-sm ml-1">– Eliminates or minimizes wrinkles</span></div>
+          <div className="flex mt-4"><span className="text-sm ml-1">- Results within 2-7days, with nearly 100% efficacy</span></div>
+          <div className="flex mt-4"><span className="text-sm ml-1">- Convenient, with no downtime</span></div>
+          <div className="flex mt-4"><span className="text-sm ml-1">- FDA-approved, with minimal health risks</span></div>
         </div>
       </div>
     </div>

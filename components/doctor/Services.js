@@ -1,5 +1,4 @@
 import React from "react"
-import { BiSlider, BiX } from "react-icons/bi"
 import Paginate from "components/Paginate"
 
 const ThumbContainer = () => {
@@ -147,7 +146,10 @@ const BodyContainer = (props) => {
         <div className="flex justify-between items-center mb-4">
           <span className="text-sm font-bold">{data.length} Results</span>
           <div className="sm:hidden">
-            <button onClick={() => props.setFilterLayer(true)} className="btn h-8 text-sm text-grayscale-100 border border-gray-800">FILTER<BiSlider className="ml-3" /></button>
+            <button onClick={() => props.setFilterLayer(true)} className="btn h-8 text-sm text-grayscale-100 border border-gray-800">
+              FILTER
+              <img src="/icons/action/filters.svg" alt="filters" className="ml-3"/>
+            </button>
           </div>
         </div>
         <hr className="hidden sm:block border-gray-300 my-4" />
@@ -206,10 +208,10 @@ const FilterLayer = (props) => {
         <div className="bg-gray-200 w-full text-grayscale-100">
           <div id="header" className="flex justify-between items-center bg-gray-300 h-20 p-10">
             <div className="flex items-center">
-              <BiSlider />
-              <span className="text-md font-bold uppercase ml-1">FILTER BY</span>
+              <img src="/icons/action/filters.svg" alt="filters"/>
+              <span className="text-md font-bold uppercase ml-2">FILTER BY</span>
             </div>
-            <BiX className="text-2xl cursor-pointer" onClick={() => props.setFilterLayer(false)} />
+            <button onClick={() => props.setFilterLayer(false)}><img src="/icons/action/close_dark.svg"/></button>
           </div>
           <div id="body" className="flex flex-col m-10">
             <span className="text-xl font-bold">Gender</span>

@@ -1,24 +1,20 @@
-import { FiPhone, FiEdit2 } from "react-icons/fi"
-import { IoChatbubblesOutline } from "react-icons/io5"
-import { BiChevronDown } from "react-icons/bi"
-
 const Contact = () => {
   const ways = [
     {
       type: 'phone',
-      icon: FiPhone,
+      icon: '/icons/generic/phone.svg',
       name: '888-217-1047',
       desc: 'Monday to Friday from 9:00AM to 5:30PM(PST)'
     },
     {
       type: 'form',
-      icon: FiEdit2,
+      icon: '/icons/generic/pencil.svg',
       name: 'Contact Form',
       desc: 'We are three Monday to Friday and we\'ll do our best to answer within 48hours.'
     },
     {
       type: 'chat',
-      icon: IoChatbubblesOutline,
+      icon: '/icons/generic/chat.svg',
       name: 'Live Chat',
       desc: 'Our team will be happy to answer all your questions regarding or products and services via Live chat.'
     }
@@ -59,7 +55,7 @@ const Contact = () => {
         {
           ways.map((item, index) => (
             <div key={index} className="bg-gray-100 w-full flex flex-col p-4 mt-4">
-              <item.icon className="text-2xl" />
+              <img src={item.icon} alt={item.name} className="w-6 h-6"/>
               <span className="text-md font-bold uppercase mt-6">{item.name}</span>
               <span className="text-sm mt-6">{item.desc}</span>
             </div>
@@ -73,7 +69,7 @@ const Contact = () => {
             <div key={index}>
               <div key={index} className="flex justify-between items-center">
                 <span className="text-sm font-bold">{item.question}</span>
-                <BiChevronDown className="text-xl" />
+                <button><img src="/icons/action/chevron_down.svg" alt="chevron_down" /></button>
               </div>
               <hr className="border-gray-300 my-6" />
             </div>

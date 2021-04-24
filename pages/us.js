@@ -40,10 +40,10 @@ const TabContainer = (props) => {
         {
           props.tabs.map((tab, index) => (
             <div key={index} className="relative flex flex-col items-center cursor-pointer mx-4" onClick={() => props.setSelectedTab(tab)}>
-              <span className={`text-sm text-center ${tab.value === props.selectedTab.value ? 'text-primary-100 font-bold' : 'text-grayscale-100'}`}>{tab.label}</span>
+              <span className={`text-sm text-center ${tab.value === props.selectedTab.value ? 'text-primary-60 font-bold' : 'text-grayscale-100'}`}>{tab.label}</span>
               {
                 tab.value === props.selectedTab.value &&
-                <BsCircleFill className="absolute -bottom-3 w-1 text-bluetone-dark" />
+                <BsCircleFill className="absolute -bottom-3 w-1 text-primary-60" />
               }
             </div>
           ))

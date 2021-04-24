@@ -1,5 +1,3 @@
-import { BiVideo, BiVideoOff } from "react-icons/bi";
-
 const TxtContainer = () => {
   return (
     <div className="px-6 md:px-52 lg:px-96 flex flex-col">
@@ -56,15 +54,13 @@ const MeetContainer = () => {
                 </div>
                 <span className="text-sm mt-6">{item.subTitle}</span>
                 <span className="text-sm mt-4">{item.desc}</span>
-                <div className="flex items-center text-grayscale-100 mt-10">
-                  {
-                    item.available ?
-                      <BiVideo />
-                      :
-                      <BiVideoOff />
-                  }
-                  <span className="text-sm ml-1">Virtual Consultation {item.available ? 'Available' : 'Not Available'}</span>
-                </div>
+                {
+                  item.available &&
+                  <div className="flex items-center text-grayscale-100 mt-10">
+                    <img src="/icons/generic/camera.svg" alt="camera" />
+                    <span className="text-sm ml-1">Virtual Consultation Available</span>
+                  </div>
+                }
               </div>
             ))
           }

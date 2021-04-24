@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import { Line } from "rc-progress"
-import { BiX, BiChevronLeftCircle, BiChevronRightCircle } from "react-icons/bi"
 import { RiTimeFill, RiPhoneFill } from "react-icons/ri"
 
 import '@hassanmojab/react-modern-calendar-datepicker/lib/DatePicker.css'
@@ -37,37 +36,39 @@ const ScheduleCall = () => {
   }, [selectedDay, selectedTimezone, selectedTime])
 
   return (
-    <div id="call" className="fixed inset-0 z-10 bg-primary-100 text-grayscale-white px-6 md:px-36 py-10">
+    <div id="call" className="fixed inset-0 z-10 bg-primary-100 px-6 md:px-36 py-10">
       <div className="flex justify-end">
-        <BiX className="text-2xl cursor-pointer" onClick={() => setCall(false)} />
+        <button onClick={() => setCall(false)}>
+          <img src='/icons/action/close_light.svg' alt="close" className="w-4 h-4" />
+        </button>
       </div>
       <div className="h-full flex flex-col justify-center items-center">
         {
           step == 1 &&
           <>
-            <span className="w-full text-xl sm:text-center font-bold">Schedule your free call <br /> with one our care managers to help you get started.</span>
-            <span className="w-full text-sm sm:text-center mt-10">Quick question to get to know you. <br />What's your first name?</span>
+            <span className="w-full text-xl sm:text-center text-grayscale-white font-bold">Schedule your free call <br /> with one our care managers to help you get started.</span>
+            <span className="w-full text-sm sm:text-center text-grayscale-white mt-10">Quick question to get to know you. <br />What's your first name?</span>
           </>
         }
         {
           step == 2 &&
           <>
-            <span className="w-full text-xl sm:text-center font-bold">Welcome, {info.firstName}</span>
-            <span className="w-full text-sm sm:text-center mt-10">What's your last name?</span>
+            <span className="w-full text-xl sm:text-center text-grayscale-white font-bold">Welcome, {info.firstName}</span>
+            <span className="w-full text-sm sm:text-center text-grayscale-white mt-10">What's your last name?</span>
           </>
         }
         {
           step == 3 &&
           <>
-            <span className="w-full text-xl sm:text-center font-bold">Welcome, {info.firstName} {info.lastName}</span>
-            <span className="w-full text-sm sm:text-center mt-10">What's your phone number?</span>
+            <span className="w-full text-xl sm:text-center text-grayscale-white font-bold">Welcome, {info.firstName} {info.lastName}</span>
+            <span className="w-full text-sm sm:text-center text-grayscale-white mt-10">What's your phone number?</span>
           </>
         }
         {
           step == 4 &&
           <>
-            <span className="w-full text-xl sm:text-center font-bold">Hi, {info.firstName} {info.lastName}</span>
-            <span className="w-full text-sm sm:text-center mt-10">Let us know when is a good time to call you.</span>
+            <span className="w-full text-xl sm:text-center text-grayscale-white font-bold">Hi, {info.firstName} {info.lastName}</span>
+            <span className="w-full text-sm sm:text-center text-grayscale-white mt-10">Let us know when is a good time to call you.</span>
           </>
         }
 
@@ -134,7 +135,7 @@ const ScheduleCall = () => {
             <button
               onClick={() => setStep(step - 1)}
             >
-              <BiChevronLeftCircle className="w-8 h-8 text-grayscale-white mt-10 mx-2" />
+              <img src="/icons/action/arrow_left_circle_fill.svg" alt="left" className="w-8 h-8 mt-10 mx-2" />
             </button>
           }
           {
@@ -143,7 +144,7 @@ const ScheduleCall = () => {
               disabled={(step == 1 && !info.firstName) || (step == 2 && !info.lastName) || (step == 3 && !info.phoneNumber) || (step == 4 && (!info.date || !info.timezone || !info.time))}
               onClick={() => setStep(step + 1)}
             >
-              <BiChevronRightCircle className="w-8 h-8 text-grayscale-white mt-10 mx-2" />
+              <img src="/icons/action/arrow_right_circle.svg" alt="left" className="w-8 h-8 mt-10 mx-2" />
             </button>
           }
         </div>
@@ -154,7 +155,7 @@ const ScheduleCall = () => {
             <div className="w-full sm:w-2/3 md:w-1/2 mt-10">
               <Line percent={step * 20} strokeColor="#F2CC8F" trailColor="#ffffff" />
             </div>
-            <span className="w-full md:w-2/3 text-xs sm:text-center mt-10">We will never share your data with 3rd parties for marketing purposes. For more information about how Because Health, shares and protects your personal data, see our Privacy Policy.</span>
+            <span className="w-full md:w-2/3 text-xs sm:text-center text-grayscale-white mt-10">We will never share your data with 3rd parties for marketing purposes. For more information about how Because Health, shares and protects your personal data, see our Privacy Policy.</span>
           </>
         }
 

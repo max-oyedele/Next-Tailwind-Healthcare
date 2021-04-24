@@ -1,5 +1,4 @@
 import React from "react"
-import { BiChevronDownCircle } from "react-icons/bi"
 
 import Header from "components/Header"
 import Footer from "components/Footer"
@@ -27,7 +26,7 @@ const TitleContainer = () => {
     <div className="h-96 flex flex-col justify-center items-center bg-success-5 my-6 px-6 md:px-36">
       <span className="text-sm">PRIVATE MEMBERSHIP</span>
       <span className="text-4xl text-center font-bold mt-6">Life lived differently, <br /> because health</span>
-      <BiChevronDownCircle className="w-7 h-7 text-grayscale-80 mt-10" />
+      <button><img src="/icons/action/scroll_to_explore_dark.svg" className="w-7 h-7 mt-10" alt="explore" /></button>
     </div>
   )
 }

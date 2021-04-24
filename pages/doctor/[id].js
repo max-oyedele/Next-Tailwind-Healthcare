@@ -1,7 +1,6 @@
 import React from "react"
 import { useRouter } from "next/router"
-import { BiMap, BiVideo, BiHelpCircle } from "react-icons/bi"
-import { FaDiagnoses } from "react-icons/fa"
+import { BiHelpCircle } from "react-icons/bi"
 import { BsCircleFill } from "react-icons/bs"
 
 import { useProvider } from "hooks/use-provider"
@@ -40,7 +39,7 @@ const ImgContainer = () => {
     }
   }, []);
 
-  const {call, setCall} = useProvider()
+  const { call, setCall } = useProvider()
 
   return (
     <div className="relative mt-10">
@@ -60,18 +59,21 @@ const ImgContainer = () => {
               <StarRating />
             </div>
             <div className="flex items-center mt-4">
-              <BiMap /><span className="text-sm ml-1">15 Broad St. Boston, MA 02019</span>
+              <img src="/icons/generic/pin_location.svg" />
+              <span className="text-sm ml-1">15 Broad St. Boston, MA 02019</span>
             </div>
             <div className="flex mt-4">
-              <FaDiagnoses /><span className="text-sm ml-1">Longevity, Wellbeing. Skincare, Weight Loss</span>
+              <img src="/icons/generic/stethoscope.svg" />
+              <span className="text-sm ml-1">Longevity, Wellbeing. Skincare, Weight Loss</span>
             </div>
             <div className="flex mt-4">
-              <BiVideo /><span className="text-sm ml-1">Virtual Consultation Available</span>
+              <img src="/icons/generic/camera.svg" />
+              <span className="text-sm ml-1">Virtual Consultation Available</span>
             </div>
           </div>
           <div id="rectangle" className="w-full sm:w-full lg:w-1/4 bg-gray-100 flex flex-col justify-center items-center rounded-md mt-4 lg:mt-0 p-6">
             <span className="text-sm">Talk to one of our care managers to help you get started.</span>
-            <button className="btn btn-secondary h-10 mt-6" onClick={()=>setCall(true)}>Schedule Your Free Call</button>
+            <button className="btn btn-secondary h-10 mt-6" onClick={() => setCall(true)}>Schedule Your Free Call</button>
           </div>
         </div>
       </div>
@@ -86,10 +88,10 @@ const TabContainer = (props) => {
         {
           props.tabs.map((tab, index) => (
             <div key={index} className="relative flex flex-col items-center cursor-pointer mx-4" onClick={() => props.setSelectedTab(tab)}>
-              <span className={`text-sm text-center ${tab.value === props.selectedTab.value ? 'text-primary-100 font-bold' : 'text-grayscale-100'}`}>{tab.label}</span>
+              <span className={`text-sm text-center ${tab.value === props.selectedTab.value ? 'text-primary-60 font-bold' : 'text-grayscale-100'}`}>{tab.label}</span>
               {
                 tab.value === props.selectedTab.value &&
-                <BsCircleFill className="absolute -bottom-3 w-1 text-bluetone-dark" />
+                <BsCircleFill className="absolute -bottom-3 w-1 text-primary-60" />
               }
             </div>
           ))

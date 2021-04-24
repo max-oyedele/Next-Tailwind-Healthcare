@@ -96,7 +96,11 @@ const BodyContainer = () => {
         <div className="flex justify-between items-center mb-4">
           <span className="text-sm font-bold">6 Results</span>
           <div className="sm:hidden">
-            <button className="btn h-8 text-sm text-grayscale-100 border border-gray-800">FILTER<BiSlider className="ml-3" /></button>
+            <button className="btn h-8 text-sm text-grayscale-100 border border-gray-800">
+              FILTER
+              {/* <BiSlider className="ml-3" /> */}
+              <img src="/icons/action/filters.svg" alt="filters" className="ml-3"/>
+            </button>
           </div>
         </div>
         <hr className="hidden sm:block border-gray-300 my-4" />

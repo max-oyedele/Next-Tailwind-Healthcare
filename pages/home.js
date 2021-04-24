@@ -1,4 +1,4 @@
-import { BiChevronDown, BiChevronLeftCircle, BiChevronRightCircle } from "react-icons/bi"
+import { BiChevronLeftCircle, BiChevronRightCircle } from "react-icons/bi"
 import { IoIosArrowRoundUp, IoIosArrowRoundDown } from "react-icons/io"
 
 import {useProvider} from "hooks/use-provider"
@@ -18,9 +18,8 @@ const LogoContainer = () => {
         <span className="text-2xl sm:text-4xl text-white block">looks good on you</span>
         <span className="text-xs text-white block mt-5">Safe and effective treatments, in person or online</span>
       </div>
-      <div className="absolute bottom-0 w-full flex flex-col items-center text-white">
-        <span className="text-xs text-grayscale-white">scroll to explore</span>
-        <BiChevronDown className="text-3xl" />
+      <div className="absolute bottom-0 w-full flex flex-col items-center text-white mb-4">
+        <button><img src="/icons/action/scroll_to_explore_light.svg" className="w-6 h-6" alt="explore" /></button>
       </div>
     </div>
   )

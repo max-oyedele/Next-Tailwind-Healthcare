@@ -2,7 +2,6 @@ import React, { useState } from "react"
 import Link from "next/link"
 import { useRouter } from "next/router"
 import { BsCircleFill } from "react-icons/bs"
-import { BiX } from "react-icons/bi"
 
 import Header from "components/Header"
 import Footer from "components/Footer"
@@ -198,7 +197,7 @@ const PlanOptionLayer = (props) => {
       <div className="bg-gray-100 w-full h-full opacity-60"></div>
       <div className="absolute inset-0 flex justify-end">
         <div className="bg-gray-300 w-full sm:w-2/3 md:w-1/3 p-10">
-          <BiX className="text-2xl cursor-pointer" onClick={() => props.setOpen(false)} />
+          <button><img src="/icons/action/close_dark.svg" onClick={() => props.setOpen(false)}/></button>
           <div className="h-full flex flex-col justify-center">
             <span className="text-2xl font-bold">Plan Options</span>
             <span className="text-sm mt-10">We offer two subscription plans. Choose your preferred option during checkout.</span>

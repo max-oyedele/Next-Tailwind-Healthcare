@@ -1,5 +1,3 @@
-import { FiChevronDown } from "react-icons/fi";
-
 const FrequentQuestion = (props) => {
   return (
     <div className="px-6 md:px-36 sm:flex">
@@ -14,7 +12,7 @@ const FrequentQuestion = (props) => {
             <div key={index}>
               <div className="flex justify-between items-center">
                 <span className="text-md">{item.question}</span>
-                <FiChevronDown className="text-grayscale-100" />
+                <button><img src="/icons/action/chevron_down.svg" alt="chevron" /></button>
               </div>
               <hr className="border-gray-300 my-4" />
             </div>
