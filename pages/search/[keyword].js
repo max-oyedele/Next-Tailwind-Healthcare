@@ -1,5 +1,4 @@
 import { useRouter } from "next/router"
-import { BiSlider } from "react-icons/bi";
 
 import Header from "components/Header"
 import Footer from "components/Footer"
@@ -98,7 +97,6 @@ const BodyContainer = () => {
           <div className="sm:hidden">
             <button className="btn h-8 text-sm text-grayscale-100 border border-gray-800">
               FILTER
-              {/* <BiSlider className="ml-3" /> */}
               <img src="/icons/action/filters.svg" alt="filters" className="ml-3"/>
             </button>
           </div>

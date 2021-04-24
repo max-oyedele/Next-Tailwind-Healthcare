@@ -1,7 +1,7 @@
 const BreadCrumb = (props) => {
   const data = props.data
   return (
-    <div className="mt-10 px-6 md:px-36">
+    <div className="mt-16 sm:mt-10 px-6 md:px-36">
       <div className="flex items-center">
         {
           data && data.length > 1 &&

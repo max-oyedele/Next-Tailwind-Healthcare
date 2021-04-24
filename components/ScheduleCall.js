@@ -36,7 +36,7 @@ const ScheduleCall = () => {
   }, [selectedDay, selectedTimezone, selectedTime])
 
   return (
-    <div id="call" className="fixed inset-0 z-10 bg-primary-100 px-6 md:px-36 py-10">
+    <div id="call" className="fixed inset-0 z-10 bg-primary-100 overflow-auto px-6 md:px-36 py-10">
       <div className="flex justify-end">
         <button onClick={() => setCall(false)}>
           <img src='/icons/action/close_light.svg' alt="close" className="w-4 h-4" />
@@ -88,12 +88,13 @@ const ScheduleCall = () => {
           <div className="w-full md:w-2/3 bg-grayscale-white mt-10 p-2">
             <div className="w-full h-full md:flex shadow-md rounded-md border p-4">
               <div id="left-box" className="hidden md:flex md:flex-col w-full md:w-1/2 md:border-r border-grayscale-60 pr-4">
-                <div className="flex flex-col h-24 justify-center items-center border-b border-grayscale-60">
+                <div className="relative flex flex-col h-24 justify-center items-center border-b border-grayscale-60">
                   <span className="text-2xl text-primary-100 font-bold">Because</span>
                   <span className="text-md text-primary-100">Health</span>
+                  <img src="/other/profile.png" alt="profile" className="absolute -bottom-6 left-0 w-12 h-12 rounded-full ring-1 ring-offset-2 ring-grayscale-40" />
                 </div>
-                <div className="flex flex-col">
-                  <span className="text-sm text-grayscale-80 mt-6">Pablo Chiquival</span>
+                <div className="flex flex-col mt-10">
+                  <span className="text-sm text-grayscale-80">Pablo Chiquival</span>
                   <span className="text-xl font-bold mt-2">Pablo Chiquival 1:1</span>
                   <div className="flex mt-6"><RiTimeFill className="text-grayscale-80" /><span className="text-xs text-grayscale-80 ml-1">30 min</span></div>
                   <div className="flex mt-4"><RiPhoneFill className="text-grayscale-80" /><span className="text-xs text-grayscale-80 ml-1">Phone call</span></div>
