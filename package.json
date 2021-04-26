@@ -23,7 +23,9 @@
     "react-icons": "^4.2.0",
     "react-paginate": "^7.1.2",
     "react-select": "^4.3.0",
+    "react-slick": "^0.28.1",
     "react-star-ratings": "^2.3.0",
+    "slick-carousel": "^1.8.1",
     "twin.macro": "^2.3.2"
   },
   "devDependencies": {

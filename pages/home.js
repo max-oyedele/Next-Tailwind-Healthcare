@@ -1,17 +1,37 @@
+import React, { useState } from 'react'
+import Slider from 'react-slick';
 import { BiChevronLeftCircle, BiChevronRightCircle } from "react-icons/bi"
 import { IoIosArrowRoundUp, IoIosArrowRoundDown } from "react-icons/io"
 
-import {useProvider} from "hooks/use-provider"
+import { useProvider } from "hooks/use-provider"
 
 import Header from "components/Header"
 import Footer from "components/Footer"
+
+const Home = () => {
+  return (
+    <div>
+      <LogoContainer />
+      <LabelContainer />
+      <TitleContainer />
+      <BrandContainer />
+      <SlideContainer />
+      <IntroContainer />
+      <MapContainer />
+      <ToolContainer />
+      <StatContainer />
+      <ContentContainer />
+      <Footer />
+    </div>
+  )
+}
 
 const LogoContainer = () => {
   return (
     <div className="relative w-full h-96 flex justify-end" style={{ background: 'linear-gradient(90deg, #3E7388 0%, #3E7388 1%, #5F9DB6 100%)' }}>
       {/* <img src="/home/logo.png" className="object-cover h-auto sm:h-96" alt="logo" /> */}
       <div className="absolute w-full justify-center">
-        <Header/>
+        <Header />
       </div>
       <div className="absolute top-28 sm:top-40 left-6 sm:left-36">
         <span className="text-2xl sm:text-4xl text-white block">Personalized healthcare</span>
@@ -106,45 +126,113 @@ const BrandContainer = () => {
 }
 
 const SlideContainer = () => {
+  const [curIndex, setCurIndex] = useState(0)
+  const sliderRef = React.useRef();
+  const settings = {
+    dots: false,
+    accessibility: false,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    adaptiveHeight: true,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    beforeChange: (oldIndex, newIndex) => setCurIndex(newIndex)
+  }
+
+  const data = [
+    {
+      name: 'Jennier W.',
+      concerns: 'Lorem ipsum dolor sit amett',
+      treatment: 'Lorem ipsum dolor sit amett',
+      desc: `"I was so nervous to address what I thought were embarrassing sexual issues, which is why I chose telehealth over an in-person doctor visit. I'm so glad I did! My Because Health physician immediately put me at ease by helping me understand just how common-and treatable-these issues are for women. It's been a month since I started treatment, and I'm feeling more confident than ever. Thank you!"`,
+      img: '/home/jennifer.png'
+    },
+    {
+      name: 'Tompson W.',
+      concerns: 'Lorem ipsum dolor sit amett',
+      treatment: 'Lorem ipsum dolor sit amett',
+      desc: `"I was so nervous to address what I thought were embarrassing sexual issues, which is why I chose telehealth over an in-person doctor visit. I'm so glad I did! My Because Health physician immediately put me at ease by helping me understand just how common-and treatable-these issues are for women. It's been a month since I started treatment, and I'm feeling more confident than ever. Thank you!"`,
+      img: '/home/tompson.png'
+    },
+    {
+      name: 'Jennier W.',
+      concerns: 'Lorem ipsum dolor sit amett',
+      treatment: 'Lorem ipsum dolor sit amett',
+      desc: `"I was so nervous to address what I thought were embarrassing sexual issues, which is why I chose telehealth over an in-person doctor visit. I'm so glad I did! My Because Health physician immediately put me at ease by helping me understand just how common-and treatable-these issues are for women. It's been a month since I started treatment, and I'm feeling more confident than ever. Thank you!"`,
+      img: '/home/jennifer.png'
+    },
+    {
+      name: 'Tompson W.',
+      concerns: 'Lorem ipsum dolor sit amett',
+      treatment: 'Lorem ipsum dolor sit amett',
+      desc: `"I was so nervous to address what I thought were embarrassing sexual issues, which is why I chose telehealth over an in-person doctor visit. I'm so glad I did! My Because Health physician immediately put me at ease by helping me understand just how common-and treatable-these issues are for women. It's been a month since I started treatment, and I'm feeling more confident than ever. Thank you!"`,
+      img: '/home/tompson.png'
+    },
+    {
+      name: 'Jennier W.',
+      concerns: 'Lorem ipsum dolor sit amett',
+      treatment: 'Lorem ipsum dolor sit amett',
+      desc: `"I was so nervous to address what I thought were embarrassing sexual issues, which is why I chose telehealth over an in-person doctor visit. I'm so glad I did! My Because Health physician immediately put me at ease by helping me understand just how common-and treatable-these issues are for women. It's been a month since I started treatment, and I'm feeling more confident than ever. Thank you!"`,
+      img: '/home/jennifer.png'
+    },
+  ];
+
   return (
     <div className="md:flex bg-gray-100 my-16">
       <div id="txt-part" className="relative w-full md:w-2/5 px-4 md:px-24 py-10">
-        <span className="text-xl font-bold">Jennier W.</span>
+        <span className="text-xl font-bold">{data[curIndex].name}</span>
         <div id="left-right-icon" className="hidden sm:flex absolute top-10 right-1 sm:right-4 md:right-10">
-          <BiChevronLeftCircle className="text-3xl mx-1 text-primary-70" />
-          <BiChevronRightCircle className="text-3xl mx-1 text-primary-70" />
+          <button onClick={() => sliderRef.current.slickPrev()}><BiChevronLeftCircle className="text-3xl mx-1 text-primary-70" /></button>
+          <button onClick={() => sliderRef.current.slickNext()}><BiChevronRightCircle className="text-3xl mx-1 text-primary-70" /></button>
         </div>
-        <div id="img-part-mobile" className="md:hidden w-full py-10 flex space-x-10 overflow-hidden">
-          <img src="/home/jennifer.png" alt="jennifer" />
-          <img src="/home/tompson.png" alt="tompson" />
-          <img src="/home/tompson.png" alt="tompson" />
+        <div id="img-part-mobile" className="md:hidden w-full py-10 space-x-10 overflow-hidden">
+          <Slider {...settings} slidesToShow={1} ref={sliderRef}>
+            {
+              data.map((item, index) => {
+                return (
+                  <div key={index}>
+                    <img src={item.img} alt={item.name} className={`w-full ${index == curIndex ? '' : 'opacity-40'}`} />
+                  </div>
+                )
+              })
+            }
+          </Slider>
         </div>
         <div className="sm:flex">
           <div className="w-full sm:w-1/2 mt-4">
             <span className="block text-xs font-bold">Concerns</span>
-            <span className="block text-xs">Lorem ipsum dolor sit amett</span>
+            <span className="block text-xs">{data[curIndex].concerns}</span>
           </div>
           <div className="w-full sm:w-1/2 sm:px-2 mt-4">
             <span className="block text-xs font-bold">Treatment</span>
-            <span className="block text-xs">Lorem ipsum dolor sit amett</span>
+            <span className="block text-xs">{data[curIndex].treatment}</span>
           </div>
         </div>
         <div className="mt-4">
-          <span className="text-xs">"I was so nervous to address what I thought were embarrassing sexual issues, which is why I chose telehealth over an in-person doctor visit. I'm so glad I did! My Because Health physician immediately put me at ease by helping me understand just how common-and treatable-these issues are for women. It's been a month since I started treatment, and I'm feeling more confident than ever. Thank you!"</span>
+          <span className="text-xs">{data[curIndex].desc}</span>
         </div>
         <div className="flex mt-6">
-          <span className="w-5 border rounded-full border-blue-700 bg-blue-700 mr-1"></span>
-          <span className="w-5 border rounded-full border-blue-200 bg-blue-200 mr-1"></span>
-          <span className="w-5 border rounded-full border-blue-200 bg-blue-200 mr-1"></span>
-          <span className="w-5 border rounded-full border-blue-200 bg-blue-200 mr-1"></span>
-          <span className="w-5 border rounded-full border-blue-200 bg-blue-200 mr-1"></span>
+          {
+            data.map((_, index) => (
+              <span className={`w-5 border rounded-full ${index == curIndex ? 'border-blue-700 bg-blue-700' : 'border-blue-200 bg-blue-200'} mr-1`}></span>
+            ))
+          }
         </div>
       </div>
 
-      <div id="img-part-pc" className="hidden md:flex md:w-3/5 pl-10 py-10 space-x-10 overflow-hidden">
-        <img src="/home/jennifer.png" alt="jennifer" />
-        <img src="/home/tompson.png" alt="tompson" />
-        <img src="/home/tompson.png" alt="tompson" />
+      <div id="img-part-pc" className="hidden md:block md:w-3/5 pl-10 py-10">
+        <Slider {...settings} ref={sliderRef}>
+          {
+            data.map((item, index) => {
+              return (
+                <div key={index}>
+                  <img src={item.img} alt={item.name} className={`h-full ${index == curIndex ? '' : 'opacity-40'}`} />
+                </div>
+              )
+            })
+          }
+        </Slider>
       </div>
     </div>
   )
@@ -249,7 +337,7 @@ const ToolContainer = () => {
 }
 
 const StatContainer = () => {
-  const {call, setCall} = useProvider()
+  const { call, setCall } = useProvider()
 
   return (
     <div className="flex flex-col items-center my-16">
@@ -273,7 +361,7 @@ const StatContainer = () => {
         </div>
       </div>
       <div className="flex justify-center mt-10">
-        <button className="btn btn-primary h-12" onClick={()=>setCall(true)}>Schedule Your Free Call</button>
+        <button className="btn btn-primary h-12" onClick={() => setCall(true)}>Schedule Your Free Call</button>
       </div>
     </div>
   )
@@ -307,24 +395,6 @@ const ContentContainer = () => {
           </div>
         </div>
       </div>
-    </div>
-  )
-}
-
-const Home = () => {
-  return (
-    <div>
-      <LogoContainer />
-      <LabelContainer />
-      <TitleContainer />
-      <BrandContainer />
-      <SlideContainer />
-      <IntroContainer />
-      <MapContainer />
-      <ToolContainer />
-      <StatContainer />
-      <ContentContainer />
-      <Footer />
     </div>
   )
 }
