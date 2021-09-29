@@ -249,7 +249,7 @@ const FilterLayer = (props) => {
 const Services = () => {
   const [filterLayer, setFilterLayer] = React.useState(false)
   const applyFilter = () => {
-    //to do
+    // to do
     setFilterLayer(false)
   }
 
